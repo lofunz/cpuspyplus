@@ -2,18 +2,35 @@ CPU Spy Plus
 
 This is the version modified of Brandon Valosek's source code. I added a few features:
 
-[*] Ability to reset/restore the timers when the cable is unplugged/plugged. You can choose the battery level thereshold to activate/reset timers.
-[*] You can group togheter all the stats which percentage of use is under a customizable thereshold.
-[*] Added info about battery juice lost since last reset.
-[*] Added 
-[*] Lots of UI changes, like a 2nd UI layout with buttons.
+[*] Ability to reset/restore the timers when the cable is unplugged/plugged. thereshold customizable.
+[*] You can group togheter all the stats which percentage of use is under a customizable thereshold of.
+[*] Added infos about battery juice lost since last reset.
+[*] Added lots of UI changes, like a 2nd UI layout with buttons.
 [*] Added "Cpu Files" menu item to see the content of the files: time_in_state and affected_cups.
 [*] Added settings to handle all the new features.
+[*] and more...
+
+If you are having issues with this app, please contact cpuspy.realgpp@gmail.com.
+
+XDA Developers thread: http://forum.xda-developers.com/showthread.php?t=1740622
+
+Permissions explained:
+android.permission.RECEIVE_BOOT_COMPLETED: to delete the some internal variables.
+android.permission.WRITE_EXTERNAL_STORAGE: used to write log messages to the file CpuSpy.log (if verbose option is enabled)
+android.permission.BATTERY_STATS: to the battery juice lost when timer is set
+android.permission.INTERNET and android.permission.ACCESS_NETWORK_STATE are used only for the ad banners
+
+!!!!!! IMPORTANT NOTE !!!!!!
+
+If you see the error "No states found" when the app starts it means the app can't read the file /sys/devices/system/cpu/cpu0/cpufreq/stats/time_in_state. This IS NOT an app related error. The solutions to the problem is to contact your ROM/kernel developer and let him know about this problem.
+
 
 === TO BUILD ===
 To download the repo
-   git clone https://realgpp@bitbucket.org/realgpp/realgpp_cpuspy.git
-   cd realgpp_cpuspy
+   git clone https://realgpp@bitbucket.org/realgpp/cpuspyplus.git
+   cd cpuspyplus
+
+
 
 
 From now on the content of Brandon Valosek's README file.
