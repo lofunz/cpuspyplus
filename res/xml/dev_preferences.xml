@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:robobunny="http://robobunny.com"
+    android:key="main_pref" >
+
+    <PreferenceCategory
+        android:key="main_pref_category"
+        android:title="@string/Impostazioni" >
+    </PreferenceCategory>
+
+    <PreferenceScreen
+        android:key="layout_options"
+        android:title="Layout Options" >
+        <PreferenceCategory android:title="Layout Options" >
+            <CheckBoxPreference
+                android:key="pref_less1perc_top_key"
+                android:summary="Show them as first row of the bar graph"
+                android:title="View \&apos;All states\&apos; on top" />
+            <CheckBoxPreference
+                android:key="pref_hide_kernel_cpu_info_key"
+                android:summary="New info layout through menu option"
+                android:title="Hide Cpu and Kernel Infos" />
+
+            <com.bvalosek.cpuspy.realgpp.mySeekBarPreference
+                android:defaultValue="1"
+                android:key="@string/ThresholdFreqsToHide"
+                android:max="41"
+                android:title="Threshold to group states"
+                android:summary="States under this value of % will be grouped"
+                robobunny:min="1"
+                robobunny:unitsLeft=""
+                robobunny:unitsRight="%" />
+
+            <ListPreference
+                android:entries="@array/theme_name"
+                android:entryValues="@array/theme_name"
+                android:key="pref_theme_selection"
+                android:summary="Select your favourite theme"
+                android:title="Select theme" />
+        </PreferenceCategory>
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:key="audio_options"
+        android:title="Audio Options" >
+        <PreferenceCategory android:title="UI Sounds Option" >
+            <CheckBoxPreference
+                android:key="pref_enable_ui_sounds"
+                android:summary="Enable main layout UI sounds"
+                android:title="Enable UI Sounds" />
+            <CheckBoxPreference
+                android:key="pref_enable_ui_pref_sounds"
+                android:summary="Enable preference layout UI sounds"
+                android:title="Enable Pref UI Sounds" />
+        </PreferenceCategory>
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:key="cable_options"
+        android:title="Cable Options" >
+        <PreferenceCategory android:title="Cable Options" >
+            <CheckBoxPreference
+                android:defaultValue="true"
+                android:key="pref_disable_batt_br"
+                android:summary="Eable reaction to cable (un)plugging"
+                android:title="Eable Charger Events" />
+
+            <com.bvalosek.cpuspy.realgpp.mySeekBarPreference
+                android:defaultValue="100"
+                android:key="ThresholdActivateTimerKey"
+                android:max="100"
+                android:summary="@string/ThresholdActivateTimerSumary"
+                android:title="@string/ThresholdActivateTimerTitle"
+                robobunny:min="0"
+                robobunny:unitsLeft=""
+                robobunny:unitsRight="%" />
+        </PreferenceCategory>
+    </PreferenceScreen>
+
+    <Preference
+        android:key="pref_show_info_key"
+        android:title="Show informations" />
+
+    <PreferenceCategory
+        android:key="dev_pref_menu"
+        android:shouldDisableView="false"
+        android:title="Development Menu" >
+        <CheckBoxPreference
+            android:key="verbose_key"
+            android:summary="Save messages to logfile"
+            android:title="Verbose App" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="top" >
+
+    <include
+        android:id="@+id/include1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/relativeLayout1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        layout="@layout/no_button_layout" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        style="@style/infoHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:gravity="bottom" >
+
+        <ImageButton
+            android:id="@+id/imageButton_1perc_freq"
+            android:layout_width="@dimen/fixed_icon_dimension"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/ic_menu_view" />
+
+        <ImageButton
+            android:id="@+id/imageButton_Refresh"
+            android:layout_width="@dimen/fixed_icon_dimension"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/imageButton_1perc_freq"
+            android:src="@drawable/ic_menu_refresh"
+             />
+
+        <ImageButton
+            android:id="@+id/imageButton_Restore_timer"
+            android:layout_width="@dimen/fixed_icon_dimension"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imageButton_Refresh"
+            android:layout_toLeftOf="@+id/imageButton_Reset_timer"
+            android:src="@drawable/restore_timer" />
+
+        <ImageButton
+            android:id="@+id/imageButton_Reset_timer"
+            android:layout_width="@dimen/fixed_icon_dimension"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/reset_timer" />
+    </RelativeLayout>
+
+</RelativeLayout>

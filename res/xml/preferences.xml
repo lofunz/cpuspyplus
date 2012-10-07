@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:robobunny="http://robobunny.com"
+    android:key="main_pref" >
+
+    <PreferenceCategory
+        android:key="main_pref_category"
+        android:title="@string/Impostazioni" >
+        <com.bvalosek.cpuspy.realgpp.mySeekBarPreference
+            android:defaultValue="100"
+            android:key="ThresholdActivateTimerKey"
+            android:max="100"
+            android:summary="@string/ThresholdActivateTimerSumary"
+            android:title="@string/ThresholdActivateTimerTitle"
+            robobunny:min="0"
+            robobunny:unitsLeft=""
+            robobunny:unitsRight="%" />
+
+        <CheckBoxPreference
+            android:key="pref_disable_batt_br"
+            android:summary="Disable reaction to cable (un)plugging "
+            android:title="Disable Cable Events" />
+
+        <ListPreference
+            android:entries="@array/theme_name"
+            android:entryValues="@array/theme_name"
+            android:key="pref_theme_selection"
+            android:summary="Select your favourite theme"
+            android:title="Select theme" />
+
+        <CheckBoxPreference
+            android:key="pref_less1perc_top_key"
+            android:summary="Show it as first row of the bar graph"
+            android:title="View \&apos;All states\&apos; on top" />
+
+        <!-- <CheckBoxPreference -->
+        <!-- android:key="pref_enable_ui_sounds" -->
+        <!-- android:summary="Enable all available UI sounds" -->
+        <!-- android:title="Enable UI Sounds" /> -->
+
+        
+
+        <PreferenceScreen android:title="Audio Options" >
+            <PreferenceCategory android:title="UI Sounds Option" >
+                <CheckBoxPreference
+                    android:key="pref_enable_ui_sounds"
+                    android:summary="Enable main layout UI sounds"
+                    android:title="Enable UI Sounds" />
+                <CheckBoxPreference
+                    android:key="pref_enable_ui_pref_sounds"
+                    android:summary="Enable preference layout UI sounds"
+                    android:title="Enable Pref UI Sounds" />
+            </PreferenceCategory>
+        </PreferenceScreen>
+        
+        <Preference
+            android:key="pref_show_info_key"
+            android:title="Show information" />
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+        android:key="dev_pref_menu"
+        android:shouldDisableView="false"
+        android:title="Development Menu" >
+        <CheckBoxPreference
+            android:key="verbose_key"
+            android:summary="Save messages to logfile"
+            android:title="Verbose App" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

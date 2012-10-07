@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- 0 -->
+    <item
+        android:id="@+id/menu_compare_files"
+        android:icon="@drawable/ic_menu_find"
+        android:title="CPU Files"/>
+
+    <!-- 1 -->
+    <item
+        android:id="@+id/menu_log_file"
+        android:icon="@drawable/ic_menu_logfile"
+        android:title="Log File"/>
+
+    <!-- 2 -->
+    <item
+        android:id="@+id/menu_refresh"
+        android:icon="@drawable/ic_menu_refresh"
+        android:title="Refresh"/>
+
+    <!-- 3 -->
+    <item
+        android:id="@+id/menu_reset"
+        android:icon="@drawable/reset_timer"
+        android:title="Reset Timers"/>
+
+    <!-- 4 -->
+    <item
+        android:id="@+id/menu_restore"
+        android:icon="@drawable/restore_timer"
+        android:title="Restore Timers"/>
+
+    <!-- 5 -->
+    <item
+        android:id="@+id/menu_1perc"
+        android:icon="@drawable/ic_menu_view"
+        android:title="Show/Hide"/>
+
+    <!-- 6 -->
+    <item
+        android:id="@+id/menu_misc_info"
+        android:icon="@drawable/misc"
+        android:title="Misc Info"/>
+
+    <!-- 7 -->
+    <item
+        android:id="@+id/menu_impostazioni"
+        android:icon="@drawable/ic_menu_settings"
+        android:title="Settings"/>
+
+</menu>

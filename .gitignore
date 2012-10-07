@@ -1,0 +1,9 @@
+# ignore binaries
+bin/*
+gen/*
+
+# maven output
+target/*
+
+# local stuff
+local.properties
