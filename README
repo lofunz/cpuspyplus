@@ -10,7 +10,7 @@ This is the version modified of Brandon Valosek's source code. I added a few fea
 [*] Added settings to handle all the new features.
 [*] and more...
 
-If you are having issues with this app, please contact cpuspy.realgpp@gmail.com.
+If you are having issues with this app, please contact me at cpuspy.realgpp@gmail.com.
 
 XDA Developers thread: http://forum.xda-developers.com/showthread.php?t=1740622
 
@@ -18,7 +18,6 @@ Permissions explained:
 android.permission.RECEIVE_BOOT_COMPLETED: to delete the some internal variables.
 android.permission.WRITE_EXTERNAL_STORAGE: used to write log messages to the file CpuSpy.log (if verbose option is enabled)
 android.permission.BATTERY_STATS: to the battery juice lost when timer is set
-android.permission.INTERNET and android.permission.ACCESS_NETWORK_STATE are used only for the ad banners
 
 !!!!!! IMPORTANT NOTE !!!!!!
 
