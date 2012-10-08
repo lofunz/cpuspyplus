@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">CPU Spy Plus - XDA</string>
-    <string name="version_name">- 0.5.19</string>
+    <string name="version_name">0.5.20</string>
     <string name="ui_header_less_1st_part">Less than </string>
     <string name="ui_header_less_2nd_part">% usage states</string>
     <string name="ui_header_time_from_boot">Time since boot</string>

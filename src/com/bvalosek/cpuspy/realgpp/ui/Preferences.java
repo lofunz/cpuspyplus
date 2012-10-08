@@ -70,6 +70,9 @@ public class Preferences extends PreferenceActivity {
 				.myLog(this.settings, "Preferences - Begin", CommonClass.YES);
 
 		addPreferencesFromResource(R.xml.dev_preferences);
+		
+		setTitle(getResources().getText(R.string.app_name) + " "
+				+ getResources().getText(R.string.version_name));
 
 		CheckBoxPreference mCheckBoxPref = (CheckBoxPreference) findPreference("verbose_key");
 		mCheckBoxPref
