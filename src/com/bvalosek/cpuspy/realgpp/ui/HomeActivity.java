@@ -574,7 +574,7 @@ public class HomeActivity extends Activity {
 			int percetage2hideStates = PreferenceManager
 					.getDefaultSharedPreferences(context).getInt(
 							context.getResources().getString(
-									R.string.ThresholdFreqsToHide), 30);
+									R.string.ThresholdFreqsToHide), 1);
 			String title = "Show/Hide ";
 			title += Integer.toString(percetage2hideStates) + "% used stats";
 			menu.getItem(5).setTitle(title);
@@ -683,7 +683,7 @@ public class HomeActivity extends Activity {
 		int percetage2hideStates = PreferenceManager
 				.getDefaultSharedPreferences(context).getInt(
 						context.getResources().getString(
-								R.string.ThresholdFreqsToHide), 30);
+								R.string.ThresholdFreqsToHide), 1);
 		for (CpuState state : monitor_cpu.getStates()) {
 			if (state.duration > 0) {
 				if (!show_1perc_states) {
@@ -792,7 +792,7 @@ public class HomeActivity extends Activity {
 			int percHideStats = PreferenceManager.getDefaultSharedPreferences(
 					context).getInt(
 					context.getResources().getString(
-							R.string.ThresholdFreqsToHide), 30);
+							R.string.ThresholdFreqsToHide), 1);
 			long time = monitor_cpu.getTotalStateTime() / 10000 * percHideStats;
 			header = getString(R.string.ui_header_less_1st_part) + " "
 					+ percHideStats;
@@ -983,7 +983,7 @@ public class HomeActivity extends Activity {
 			int percetage2hideStates = PreferenceManager
 					.getDefaultSharedPreferences(context).getInt(
 							context.getResources().getString(
-									R.string.ThresholdFreqsToHide), 30);
+									R.string.ThresholdFreqsToHide), 1);
 			sFreq = "All states < " + Integer.toString(percetage2hideStates)
 					+ "%";
 		} else if (state.freq == 0) {
