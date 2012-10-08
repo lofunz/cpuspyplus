@@ -41,9 +41,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.bvalosek.cpuspy.realgpp.*;
 import com.bvalosek.cpuspy.realgpp.CpuStateMonitor.CpuStateMonitorException;
-import com.google.ads.AdRequest;
-import com.google.ads.AdSize;
-import com.google.ads.AdView;
 
 import android.util.Log;
 
@@ -81,8 +78,6 @@ public class HomeActivity extends Activity {
 
 	private static Context context;
 	
-	 private AdView adView;
-
 	public static Context getAppContext() {
 		return HomeActivity.context;
 	}
@@ -144,22 +139,7 @@ public class HomeActivity extends Activity {
 				.equals(CommonClass.THEME_NO_BUTTON))
 			setContentView(R.layout.no_button_layout);
 		else
-			setContentView(R.layout.button_layout);
-		
-		
-		// Create the adView
-	    adView = new AdView(this, AdSize.BANNER, "a15071961a1d16d");
-
-	    // Lookup your LinearLayout assuming it's been given
-	    // the attribute android:id="@+id/mainLayout"
-	    LinearLayout layout = (LinearLayout)findViewById(R.id.linearLayout_4_ads);
-
-	    // Add the adView to it
-	    layout.addView(adView);
-
-	    // Initiate a generic request to load it with an ad
-	    adView.loadAd(new AdRequest());
-		
+			setContentView(R.layout.button_layout);		
 
 		/** Broadcast Receiver */
 		if (isCharging()) {
@@ -188,14 +168,6 @@ public class HomeActivity extends Activity {
 				CommonClass.YES);
 
 	}
-
-	@Override
-	  public void onDestroy() {
-	    if (adView != null) {
-	      adView.destroy();
-	    }
-	    super.onDestroy();
-	  }
 	
 	/** When the activity is about to change orientation */
 	@Override

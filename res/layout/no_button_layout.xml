@@ -438,23 +438,4 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-
-    <LinearLayout
-        android:id="@+id/linearLayout_4_ads"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="false" >
-
-<!--         <com.google.ads.AdView -->
-<!--             android:id="@+id/adView" -->
-<!--             android:layout_width="wrap_content" -->
-<!--             android:layout_height="wrap_content" -->
-<!--             ads:adSize="BANNER" -->
-<!--             ads:adUnitId="a15071961a1d16d" -->
-<!--             ads:testDevices="TEST_EMULATOR, C23E7B9C47EBA5C2C79165D838E54C9C" -->
-<!--             ads:loadAdOnCreate="true" /> -->
-    </LinearLayout>
-
 </RelativeLayout>
