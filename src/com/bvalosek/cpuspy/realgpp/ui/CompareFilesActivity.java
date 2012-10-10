@@ -37,7 +37,7 @@ public class CompareFilesActivity extends Activity {
 		tv.setText(readFile(CommonClass.TIME_IN_STATE_PATH_CORE0));
 
 		tv = (TextView) findViewById(R.id.textViewCpu1);
-		tv.setText(ls(CommonClass.TIME_IN_STATE_PATH_CORE1));
+		tv.setText(readFile(CommonClass.TIME_IN_STATE_PATH_CORE1));
 		
 		CommonClass.myLog(this.settings, "CompareFilesActivity - End", CommonClass.YES);
 	}
@@ -68,36 +68,5 @@ public class CompareFilesActivity extends Activity {
 			exception.printStackTrace();
 		}
 		return result;
-	}
-
-	String ls(String filename) {
-		try {
-			// Executes the command.
-			Process process = Runtime.getRuntime().exec(
-					"/system/bin/cat " + filename);
-
-			// Reads stdout.
-			// NOTE: You can write to stdin of the command using
-			// process.getOutputStream().
-			BufferedReader reader = new BufferedReader(new InputStreamReader(
-					process.getInputStream()));
-			int read;
-			char[] buffer = new char[4096];
-			StringBuffer output = new StringBuffer();
-			while ((read = reader.read(buffer)) > 0) {
-				output.append(buffer, 0, read);
-			}
-			reader.close();
-
-			// Waits for the command to finish.
-			process.waitFor();
-			if ( output.length() == 0)
-				return "file doesn't exist:\n" + filename;
-			return output.toString();
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		} catch (InterruptedException e) {
-			throw new RuntimeException(e);
-		}
 	}
 }
