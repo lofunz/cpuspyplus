@@ -25,8 +25,8 @@
                 android:defaultValue="1"
                 android:key="@string/ThresholdFreqsToHide"
                 android:max="41"
-                android:title="Threshold to group states"
                 android:summary="States under this value of % will be grouped"
+                android:title="Threshold to group states"
                 robobunny:min="1"
                 robobunny:unitsLeft=""
                 robobunny:unitsRight="%" />
@@ -75,10 +75,23 @@
         </PreferenceCategory>
     </PreferenceScreen>
 
-    <Preference
-        android:key="pref_show_info_key"
-        android:title="Show informations" />
-
+    <PreferenceCategory
+        android:key="info_contacts"
+        android:shouldDisableView="false"
+        android:title="Info &amp; Contacts" >
+        <Preference
+            android:key="pref_show_info_key"
+            android:title="Show informations" />
+        
+        <Preference
+            android:key="pref_write_email_key"
+            android:title="Mail 2 Developer" />
+        
+        <Preference
+            android:key="pref_xda_thread_key"
+            android:title="XDA forum thread" />
+    </PreferenceCategory>
+    
     <PreferenceCategory
         android:key="dev_pref_menu"
         android:shouldDisableView="false"
