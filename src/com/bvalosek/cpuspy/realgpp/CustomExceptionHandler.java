@@ -104,7 +104,7 @@ public class CustomExceptionHandler implements UncaughtExceptionHandler {
 			report.append("****  End of current Report ***");
 			PrintWriter pw = new PrintWriter(new FileWriter(
 					Environment.getExternalStorageDirectory() + "/"
-							+ CommonClass.LOG_FILE, true));
+							+ CommonClass.PATH_LOG_FILE, true));
 			Log.e("eccezione", report.toString());
 
 			pw.write(report.toString());

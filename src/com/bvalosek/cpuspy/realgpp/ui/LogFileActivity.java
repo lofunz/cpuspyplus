@@ -1,13 +1,8 @@
 package com.bvalosek.cpuspy.realgpp.ui;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-
 import com.bvalosek.cpuspy.realgpp.R;
+import com.bvalosek.cpuspy.realgpp.SystemUtils;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -23,7 +18,7 @@ import com.bvalosek.cpuspy.realgpp.CommonClass;
 public class LogFileActivity extends Activity {
 
 	String filePath = Environment.getExternalStorageDirectory() + "/"
-			+ CommonClass.LOG_FILE;
+			+ CommonClass.PATH_LOG_FILE;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -41,7 +36,7 @@ public class LogFileActivity extends Activity {
 							"Logfile deleted", Toast.LENGTH_SHORT);
 					toast.show();
 					TextView tv = (TextView) findViewById(R.id.logfile_content);
-					tv.setText(readFile(LogFileActivity.this.filePath));
+					tv.setText(SystemUtils.readFile(LogFileActivity.this.filePath));
 				} else {
 					Toast toast = Toast.makeText(getApplicationContext(),
 							"Logfile NOT deleted", Toast.LENGTH_SHORT);
@@ -55,7 +50,7 @@ public class LogFileActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				TextView tv = (TextView) findViewById(R.id.logfile_content);
-				tv.setText(readFile(LogFileActivity.this.filePath));
+				tv.setText(SystemUtils.readFile(LogFileActivity.this.filePath));
 				Toast toast = Toast.makeText(getApplicationContext(),
 						"Logfile reloaded", Toast.LENGTH_SHORT);
 				toast.show();
@@ -63,35 +58,6 @@ public class LogFileActivity extends Activity {
 		});
 
 		TextView tv = (TextView) findViewById(R.id.logfile_content);
-		tv.setText(readFile(this.filePath));
+		tv.setText(SystemUtils.readFile(this.filePath));
 	}
-
-	private String readFile(String filename) {
-		String result = "";
-		try {
-
-			InputStream is = new FileInputStream(filename);
-			InputStreamReader ir = new InputStreamReader(is);
-			BufferedReader br = new BufferedReader(ir);
-
-			String line;
-
-			// read every line of the file into the line-variable, on line at
-			// the time
-			while ((line = br.readLine()) != null) {
-				result += line + "\n";
-			}
-
-			// close the file again
-			is.close();
-		} catch (java.io.FileNotFoundException e) {
-
-			result = "file doesn't exist:\n" + filename;
-		} catch (IOException exception) {
-			// TODO Auto-generated catch-block stub.
-			exception.printStackTrace();
-		}
-		return result;
-	}
-
 }

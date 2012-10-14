@@ -1,85 +1,112 @@
 package com.bvalosek.cpuspy.realgpp;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Scanner;
-
-
+import java.io.InputStreamReader;
+import java.lang.NumberFormatException;
 
 public class SystemUtils {
 	/**
 	 * @return in kiloHertz.
-	 * @throws SystemUtilsException
 	 */
-	public static int getCPUFrequencyMinScaling() throws Exception {
-		return SystemUtils
-				.readSystemFileAsInt("/sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq");
-	}
-
-	public static int getCPUFrequencyMaxScaling() throws Exception {
-		return SystemUtils
-				.readSystemFileAsInt("/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq");
+	public static int getCPUFrequencyMinScaling() {
+		int ret = 0;
+		try {
+			String valueStr = SystemUtils.readFile(
+					CommonClass.PATH_SCALING_MIN_FREQ)
+					.replace("\n", "");
+			ret = Integer.valueOf(valueStr);
+		} catch (NumberFormatException nfe) {
+			ret = 0;
+		}
+		return ret;
 	}
 
 	/**
 	 * @return in kiloHertz.
-	 * @throws SystemUtilsException
 	 */
-	public static int getCPUFrequencyMax() throws Exception {
-		return SystemUtils
-				.readSystemFileAsInt("/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq");
+	public static int getCPUFrequencyMaxScaling() {
+		int ret = 0;
+		try {
+			String valueStr = SystemUtils.readFile(
+					CommonClass.PATH_SCALING_MAX_FREQ)
+					.replace("\n", "");
+			ret = Integer.valueOf(valueStr);
+		} catch (NumberFormatException nfe) {
+			ret = 0;
+		}
+		return ret;
 	}
 
 	/**
 	 * @return in kiloHertz.
-	 * @throws SystemUtilsException
 	 */
-	public static int getCPUFrequencyMin() throws Exception {
-		return SystemUtils
-				.readSystemFileAsInt("/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq");
+	public static int getCPUFrequencyMax() {
+		int ret = 0;
+		try {
+			String valueStr = SystemUtils.readFile(
+					CommonClass.PATH_CPUINFO_MAX_FREQ)
+					.replace("\n", "");
+			ret = Integer.valueOf(valueStr);
+		} catch (NumberFormatException nfe) {
+			ret = 0;
+		}
+		return ret;
+	}
+
+	/**
+	 * @return in kiloHertz.
+	 */
+	public static int getCPUFrequencyMin() {
+		int ret = 0;
+		try {
+			String valueStr = SystemUtils.readFile(
+					CommonClass.PATH_CPUINFO_MIN_FREQ)
+					.replace("\n", "");
+			ret = Integer.valueOf(valueStr);
+		} catch (NumberFormatException nfe) {
+			ret = 0;
+		}
+		return ret;
+	}
+
+	public static String getGovernor(){
+		String governorStr = SystemUtils
+				.readFile(CommonClass.PATH_SCALING_GOVERNOR).replace("\n","");;
+		return governorStr;
 	}
 	
-	public static String getGovernor()
-			throws Exception {
-		String pSystemFile = "/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor";
-		InputStream in = null;
-		try {
-			final Process process = new ProcessBuilder(new String[] {
-					"/system/bin/cat", pSystemFile }).start();
-
-			in = process.getInputStream();
-			final String content = readFully(in);
-			return content;
-		} catch (final Exception e) {
-			throw new Exception(e);
-		}
+	public static String getKernelInfo() {
+		return SystemUtils.readFile(CommonClass.PATH_KERNEL_INFO).replace("\n","");
 	}
-
 	
-
-	private static int readSystemFileAsInt(final String pSystemFile)
-			throws Exception {
-		InputStream in = null;
-		try {
-			final Process process = new ProcessBuilder(new String[] {
-					"/system/bin/cat", pSystemFile }).start();
-
-			in = process.getInputStream();
-			final String content = readFully(in);
-			return Integer.parseInt(content);
-		} catch (final Exception e) {
-			throw new Exception(e);
-		}
+	public static String getCPUInfo() {
+		return SystemUtils.readFile(CommonClass.PATH_CPU_INFO);
 	}
 
-	public static final String readFully(final InputStream pInputStream)
-			throws IOException {
-		final StringBuilder sb = new StringBuilder();
-		final Scanner sc = new Scanner(pInputStream);
-		while (sc.hasNextLine()) {
-			sb.append(sc.nextLine());
+	static public String readFile(String filename) {
+		String result = "";
+		try {
+
+			InputStream is = new FileInputStream(filename);
+			InputStreamReader ir = new InputStreamReader(is);
+			BufferedReader br = new BufferedReader(ir);
+
+			String line;
+			while ((line = br.readLine()) != null) {
+				result += line + "\n";
+			}
+
+			// close the file again
+			is.close();
+		} catch (java.io.FileNotFoundException e) {
+			result = "File doesn't exist:\n" + filename;
+		} catch (IOException exception) {
+			result = "IO error:\n" + filename;
 		}
-		return sb.toString();
+		return result;
 	}
 
 }

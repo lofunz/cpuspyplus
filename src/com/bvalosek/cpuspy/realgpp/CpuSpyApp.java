@@ -6,23 +6,14 @@
 
 package com.bvalosek.cpuspy.realgpp;
 
-// imports
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
 import android.app.Application;
 import android.content.SharedPreferences;
-import android.util.Log;
 
 /** main application class */
 public class CpuSpyApp extends Application {
-
-	private static final String KERNEL_VERSION_PATH = "/proc/version";
 
 	private static final String TAG = "CpuSpyApp";
 
@@ -99,23 +90,7 @@ public class CpuSpyApp extends Application {
 
 	/** Try to read the kernel version string from the proc fileystem */
 	public String updateKernelVersion() {
-		try {
-			InputStream is = new FileInputStream(KERNEL_VERSION_PATH);
-			InputStreamReader ir = new InputStreamReader(is);
-			BufferedReader br = new BufferedReader(ir);
-
-			String line;
-			while ((line = br.readLine()) != null) {
-				this._kernelVersion = line;
-			}
-
-			is.close();
-		} catch (IOException e) {
-			Log.e(TAG, "Problem reading kernel version file");
-			return "";
-		}
-
-		// made it
+		this._kernelVersion = SystemUtils.getKernelInfo();
 		return this._kernelVersion;
 	}
 	

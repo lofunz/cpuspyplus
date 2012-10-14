@@ -1,10 +1,13 @@
 package com.bvalosek.cpuspy.realgpp;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -34,9 +37,16 @@ public class CommonClass extends Activity {
 
 	public static final String AFFECTED_CPUS_PATH_CPU0 = "/sys/devices/system/cpu/cpu0/cpufreq/affected_cpus";
 	public static final String AFFECTED_CPUS_PATH_CPU1 = "/sys/devices/system/cpu/cpu1/cpufreq/affected_cpus";
-	public static String TIME_IN_STATE_PATH_CORE0 = "/sys/devices/system/cpu/cpu0/cpufreq/stats/time_in_state";
-	public static String TIME_IN_STATE_PATH_CORE1 = "/sys/devices/system/cpu/cpu1/cpufreq/stats/time_in_state";
-	public static final String LOG_FILE = "CpuSpy.log";
+	public static String PATH_TIME_IN_STATE_CORE0 = "/sys/devices/system/cpu/cpu0/cpufreq/stats/time_in_state";
+	public static String PATH_TIME_IN_STATE_CORE1 = "/sys/devices/system/cpu/cpu1/cpufreq/stats/time_in_state";
+	public static String PATH_KERNEL_INFO = "/proc/version";
+	public static String PATH_CPU_INFO = "/proc/cpuinfo";
+	public static String PATH_SCALING_GOVERNOR = "/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor";
+	public static String PATH_CPUINFO_MIN_FREQ = "/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq";
+	public static String PATH_CPUINFO_MAX_FREQ = "/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq";
+	public static String PATH_SCALING_MAX_FREQ = "/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq";
+	public static String PATH_SCALING_MIN_FREQ = "/sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq";
+	public static final String PATH_LOG_FILE = "CpuSpy.log";
 
 	public static final String PREF_NAME = "CpuSpyPreferences";
 	public static final String PREF_ENABLE_BATTERY_EVENTS_RECEIVER = "pref_battery_events";
@@ -75,7 +85,7 @@ public class CommonClass extends Activity {
 		try {
 			FileInputStream f = new FileInputStream(
 					Environment.getExternalStorageDirectory() + "/"
-							+ CommonClass.LOG_FILE);
+							+ CommonClass.PATH_LOG_FILE);
 			logfile_exist = true;
 		} catch (FileNotFoundException exception) {
 			Log.i("existLogFile()", "No logfile generated so on");
@@ -94,7 +104,7 @@ public class CommonClass extends Activity {
 				if (!existLogFile()) {
 					pw = new PrintWriter(new FileWriter(
 							Environment.getExternalStorageDirectory() + "/"
-									+ CommonClass.LOG_FILE, true));
+									+ CommonClass.PATH_LOG_FILE, true));
 
 					StringBuilder message = new StringBuilder();
 					addInformation(message);
@@ -105,7 +115,7 @@ public class CommonClass extends Activity {
 
 				pw = new PrintWriter(new FileWriter(
 						Environment.getExternalStorageDirectory() + "/"
-								+ CommonClass.LOG_FILE, true));
+								+ CommonClass.PATH_LOG_FILE, true));
 				/*
 				 * LOG LINE TO FILE
 				 */
@@ -177,5 +187,7 @@ public class CommonClass extends Activity {
 		long totalBlocks = stat.getBlockCount();
 		return totalBlocks * blockSize;
 	}
+	
+	
 
 }

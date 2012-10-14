@@ -6,12 +6,15 @@ import com.bvalosek.cpuspy.realgpp.R;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
+import android.widget.Toast;
 
 public class Preferences extends PreferenceActivity {
 	SharedPreferences settings;
@@ -71,7 +74,9 @@ public class Preferences extends PreferenceActivity {
 
 		addPreferencesFromResource(R.xml.dev_preferences);
 		
-		setTitle(getResources().getText(R.string.app_name) + " "
+		String originalTitle = getTitle().toString();
+
+		setTitle(originalTitle + " "
 				+ getResources().getText(R.string.version_name));
 
 		CheckBoxPreference mCheckBoxPref = (CheckBoxPreference) findPreference("verbose_key");
@@ -104,11 +109,11 @@ public class Preferences extends PreferenceActivity {
 
 			@Override
 			public boolean onPreferenceClick(Preference preference) {
-				playClickedSound();				
+				playClickedSound();
 				return true;
 			}
 		});
-		
+
 		lp.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
 
 			@Override
@@ -356,37 +361,89 @@ public class Preferences extends PreferenceActivity {
 						return false;
 					}
 				});
+
+		preference = findPreference("pref_write_email_key");
+		preference
+				.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+
+					@Override
+					public boolean onPreferenceClick(Preference preference) {
+						playClickedSound();
+						Intent i = new Intent(Intent.ACTION_SEND);
+						i.setType("message/rfc822");
+						i.putExtra(Intent.EXTRA_EMAIL,
+								new String[] { "cpuspy.realgpp@gmail.com" });
+						i.putExtra(Intent.EXTRA_SUBJECT,
+								"Cpuspy Plus - Message for you");
+
+						try {
+							startActivity(Intent.createChooser(i,
+									"Send mail..."));
+						} catch (android.content.ActivityNotFoundException ex) {
+							Toast.makeText(HomeActivity.getAppContext(),
+									"There are no email clients installed.",
+									Toast.LENGTH_SHORT).show();
+						}
+						return false;
+					}
+				});
+
 		
+		preference = findPreference("pref_xda_thread_key");
+		if (originalTitle.endsWith("XDA")) {
+
+			preference
+					.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+
+						@Override
+						public boolean onPreferenceClick(Preference preference) {
+							playClickedSound();
+							Intent viewIntent = new Intent(
+									"android.intent.action.VIEW",
+									Uri.parse("http://forum.xda-developers.com/showthread.php?t=1740622"));
+							startActivity(viewIntent);
+							return false;
+						}
+					});
+		} else {
+			PreferenceCategory pc = (PreferenceCategory) findPreference("info_contacts");
+			pc.removePreference(preference);
+
+		}
+
 		PreferenceScreen prefScreen = (PreferenceScreen) findPreference("layout_options");
-		prefScreen.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+		prefScreen
+				.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
 
-			@Override
-			public boolean onPreferenceClick(Preference preference) {
-				playClickedSound();				
-				return true;
-			}
-		});
-		
+					@Override
+					public boolean onPreferenceClick(Preference preference) {
+						playClickedSound();
+						return true;
+					}
+				});
+
 		prefScreen = (PreferenceScreen) findPreference("audio_options");
-		prefScreen.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+		prefScreen
+				.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
 
-			@Override
-			public boolean onPreferenceClick(Preference preference) {
-				playClickedSound();				
-				return true;
-			}
-		});
-		
+					@Override
+					public boolean onPreferenceClick(Preference preference) {
+						playClickedSound();
+						return true;
+					}
+				});
+
 		prefScreen = (PreferenceScreen) findPreference("cable_options");
-		prefScreen.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+		prefScreen
+				.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
 
-			@Override
-			public boolean onPreferenceClick(Preference preference) {
-				playClickedSound();				
-				return true;
-			}
-		});
-		
+					@Override
+					public boolean onPreferenceClick(Preference preference) {
+						playClickedSound();
+						return true;
+					}
+				});
+
 		CommonClass.myLog(this.settings, "Preferences - End", CommonClass.YES);
 	}
 }

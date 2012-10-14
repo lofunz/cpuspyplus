@@ -128,54 +128,46 @@ public class CpuStateMonitor extends Activity {
 	 * @return a list of all the CPU frequency states, which contains both a
 	 *         frequency and a duration (time spent in that state
 	 */
-	public List<CpuState> updateStates() throws CpuStateMonitorException {
+	public List<CpuState> updateStates() {
+
 		/*
 		 * attempt to create a buffered reader to the time in state file and
 		 * read in the states to the class
 		 */
 		try {
+
 			InputStream is = new FileInputStream(
-					CommonClass.TIME_IN_STATE_PATH_CORE0);
+					CommonClass.PATH_TIME_IN_STATE_CORE0);
 			InputStreamReader ir = new InputStreamReader(is);
 			BufferedReader br = new BufferedReader(ir);
 			this._states.clear();
-			readInStates(br);
-			is.close();
-		} catch (IOException e) {
-			throw new CpuStateMonitorException(
-					"Problem opening time-in-states file");
-		}
+			String line;
+			while ((line = br.readLine()) != null) {
 
-		/*
-		 * deep sleep time determined by difference between elapsed (total) boot
-		 * time and the system uptime (awake)
-		 */
-		long sleepTime = (SystemClock.elapsedRealtime() - SystemClock
-				.uptimeMillis()) / 10;
-		this._states.add(new CpuState(0, sleepTime));
+				String[] nums = line.split(" ");
+				this._states.add(new CpuState(Integer.parseInt(nums[0]), Long
+						.parseLong(nums[1])));
+
+			}
+
+			// close the file
+			is.close();
+
+			/*
+			 * deep sleep time determined by difference between elapsed (total)
+			 * boot time and the system uptime (awake)
+			 */
+			long sleepTime = (SystemClock.elapsedRealtime() - SystemClock
+					.uptimeMillis()) / 10;
+			this._states.add(new CpuState(0, sleepTime));
+		} catch (java.io.FileNotFoundException e) {
+			Log.v(CommonClass.TAG, "time_in_state: File Not Found");
+		} catch (IOException exception) {
+			Log.v(CommonClass.TAG, "time_in_state: Opening Error");
+		}
 
 		Collections.sort(this._states, Collections.reverseOrder());
 
 		return this._states;
-	}
-
-	/**
-	 * read from a provided BufferedReader the state lines into the States
-	 * member field
-	 */
-	private void readInStates(BufferedReader br)
-			throws CpuStateMonitorException {
-		try {
-			String line;
-			while ((line = br.readLine()) != null) {
-				// split open line and convert to Integers
-				String[] nums = line.split(" ");
-				this._states.add(new CpuState(Integer.parseInt(nums[0]), Long
-						.parseLong(nums[1])));
-			}
-		} catch (IOException e) {
-			throw new CpuStateMonitorException(
-					"Problem processing time-in-states file");
-		}
 	}
 }

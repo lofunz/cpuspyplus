@@ -18,6 +18,9 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.BatteryManager;
@@ -26,12 +29,15 @@ import android.view.View.OnClickListener;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.preference.PreferenceManager;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -77,7 +83,7 @@ public class HomeActivity extends Activity {
 	SharedPreferences settings;
 
 	private static Context context;
-	
+
 	public static Context getAppContext() {
 		return HomeActivity.context;
 	}
@@ -106,17 +112,15 @@ public class HomeActivity extends Activity {
 		this.settings = getSharedPreferences(CommonClass.PREF_NAME,
 				MODE_PRIVATE);
 		Editor editor = this.settings.edit();
-		
-		
 
 		/*
 		 * NON CANCELLARE
 		 * 
 		 * Code executed only on the first execution of the app for example when
-		 * just installed or updated //
+		 * just installed or updated
 		 */
 		String actualVersion = this.settings.getString(
-				CommonClass.PREF_APP_VERSION, "- realgpp 0.4.00");
+				CommonClass.PREF_APP_VERSION, "0.4.00");
 		if (!actualVersion.equals(getResources().getString(
 				R.string.version_name))) {
 
@@ -139,7 +143,7 @@ public class HomeActivity extends Activity {
 				.equals(CommonClass.THEME_NO_BUTTON))
 			setContentView(R.layout.no_button_layout);
 		else
-			setContentView(R.layout.button_layout);		
+			setContentView(R.layout.button_layout);
 
 		/** Broadcast Receiver */
 		if (isCharging()) {
@@ -168,7 +172,7 @@ public class HomeActivity extends Activity {
 				CommonClass.YES);
 
 	}
-	
+
 	/** When the activity is about to change orientation */
 	@Override
 	public void onSaveInstanceState(Bundle outState) {
@@ -557,6 +561,7 @@ public class HomeActivity extends Activity {
 		menu.getItem(0).setVisible(true); // cpu files
 		menu.getItem(1).setVisible(true);// log file
 		menu.getItem(7).setVisible(true);// settings
+		menu.getItem(8).setVisible(true);// tests
 
 		if (this.settings.getString(CommonClass.PREF_THEME_SELECTION,
 				CommonClass.THEME_NO_BUTTON).equals(
@@ -637,6 +642,11 @@ public class HomeActivity extends Activity {
 			misc.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(misc);
 			break;
+		case R.id.menu_app_test:
+			Intent testIntent = new Intent(getApplicationContext(),
+					TestsActivity.class);
+			startActivity(testIntent);
+			break;
 		}
 		return true;
 	}
@@ -684,6 +694,7 @@ public class HomeActivity extends Activity {
 				.getDefaultSharedPreferences(context).getInt(
 						context.getResources().getString(
 								R.string.ThresholdFreqsToHide), 1);
+
 		for (CpuState state : monitor_cpu.getStates()) {
 			if (state.duration > 0) {
 				if (!show_1perc_states) {
@@ -710,15 +721,16 @@ public class HomeActivity extends Activity {
 			}
 		}
 
-		// show the red warning label if no states found
+		/*
+		 * show the red warning label if no states found
+		 */
 		int dim = 0;
 		for (int i = 0; i < 4; i++) {
 			dim = monitor_cpu.getStates().toArray().length;
-			monitor_cpu.getStates().isEmpty();
 			if (dim != 0)
 				break;
 		}
-
+		
 		if (dim == 0) {
 			findViews();
 
@@ -745,6 +757,9 @@ public class HomeActivity extends Activity {
 			this._uiKernelString.setText(HomeActivity._app.getKernelVersion());
 
 			this._uiStatesWarning.setVisibility(View.VISIBLE);
+			
+			new NotCompatibleTask().execute();
+
 			return;
 		} else {
 
@@ -851,48 +866,12 @@ public class HomeActivity extends Activity {
 			/*
 			 * CPU Info textview
 			 */
-			String cpuInfo = "Freqs range: ";
-			try {
-				cpuInfo += String
-						.valueOf(SystemUtils.getCPUFrequencyMin() / 1000)
-						+ "MHz - "
-						+ String.valueOf(SystemUtils.getCPUFrequencyMax() / 1000)
-						+ "MHz";
-
-			} catch (Exception exception) {
-				cpuInfo += "Error";
-				CommonClass.myLog(this.settings, exception.getMessage(),
-						CommonClass.YES);
-			}
-
-			cpuInfo += "\nScaling range: ";
-
-			try {
-				cpuInfo += String.valueOf(SystemUtils
-						.getCPUFrequencyMinScaling() / 1000)
-						+ "MHz - "
-						+ String.valueOf(SystemUtils
-								.getCPUFrequencyMaxScaling() / 1000) + "MHz";
-			} catch (Exception exception) {
-				cpuInfo += "Error";
-				CommonClass.myLog(this.settings, exception.getMessage(),
-						CommonClass.YES);
-			}
-
-			cpuInfo += "\nGovernor: ";
-			try {
-				cpuInfo += SystemUtils.getGovernor();
-			} catch (Exception exception) {
-				cpuInfo += "Error";
-				CommonClass.myLog(this.settings, exception.getMessage(),
-						CommonClass.YES);
-			}
-			this._uiTextView_CpuInfoString.setText(cpuInfo);
+			new UpdateCPUKernelInfoDataTask().execute((Void) null);
 
 			/*
 			 * kernel line
 			 */
-			this._uiKernelString.setText(HomeActivity._app.getKernelVersion());
+			// this._uiKernelString.setText(HomeActivity._app.getKernelVersion());
 
 			SharedPreferences settings = getSharedPreferences(
 					CommonClass.PREF_NAME, MODE_PRIVATE);
@@ -1022,11 +1001,7 @@ public class HomeActivity extends Activity {
 		@Override
 		protected Void doInBackground(Void... v) {
 			CpuStateMonitor monitor = HomeActivity._app.getCpuStateMonitor();
-			try {
-				monitor.updateStates();
-			} catch (CpuStateMonitorException e) {
-				Log.e(CommonClass.TAG, "Problem getting CPU states");
-			}
+			monitor.updateStates();
 
 			return null;
 		}
@@ -1045,6 +1020,111 @@ public class HomeActivity extends Activity {
 			log("finished data update");
 			HomeActivity.this._updatingData = false;
 			updateView();
+		}
+	}
+	
+	public class NotCompatibleTask extends AsyncTask<Void, Void, Void> {
+
+		@Override
+		protected Void doInBackground(Void... v) {
+			SystemClock.sleep(1000);
+			return null;
+		}
+
+		@SuppressWarnings("deprecation")
+		@Override
+		protected void onPostExecute(Void v) {
+
+			AlertDialog alertDialog = new AlertDialog.Builder(HomeActivity.this).create();
+			alertDialog.setTitle("Attention");
+			alertDialog
+					.setMessage("There was an error reading the CPU states file.\nDo you want to run the compatibility test?");
+			alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					Intent testIntent = new Intent(getApplicationContext(),
+							TestsActivity.class);
+					startActivity(testIntent);
+					dialog.dismiss();
+				}
+			});
+			alertDialog.setCancelable(true);
+
+			alertDialog.setIcon(R.drawable.warning);
+
+			Window window = alertDialog.getWindow();
+			WindowManager.LayoutParams wlp = window.getAttributes();
+
+			wlp.gravity = Gravity.BOTTOM;
+			wlp.flags &= ~WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+			window.setAttributes(wlp);
+			alertDialog.show();
+		}
+	}
+
+	/** Update the CPU Info of the main UI layout */
+	public class UpdateCPUKernelInfoDataTask extends
+			AsyncTask<Void, Void, Void> {
+		String cpuInfo;
+
+		String kernelInfo;
+
+		@Override
+		protected Void doInBackground(Void... arg0) {
+			SharedPreferences settings = getSharedPreferences(
+					CommonClass.PREF_NAME, MODE_PRIVATE);
+			this.cpuInfo = "Freqs range: ";
+			try {
+
+				this.cpuInfo += String
+						.valueOf(SystemUtils.getCPUFrequencyMin() / 1000)
+						+ "MHz - "
+						+ String.valueOf(SystemUtils.getCPUFrequencyMax() / 1000)
+						+ "MHz";
+
+			} catch (Exception exception) {
+				this.cpuInfo += "Error";
+				CommonClass.myLog(settings, exception.getMessage(),
+						CommonClass.YES);
+			}
+
+			this.cpuInfo += "\nScaling range: ";
+
+			try {
+				this.cpuInfo += String.valueOf(SystemUtils
+						.getCPUFrequencyMinScaling() / 1000)
+						+ "MHz - "
+						+ String.valueOf(SystemUtils
+								.getCPUFrequencyMaxScaling() / 1000) + "MHz";
+			} catch (Exception exception) {
+				this.cpuInfo += "Error";
+				CommonClass.myLog(settings, exception.getMessage(),
+						CommonClass.YES);
+			}
+
+			this.cpuInfo += "\nGovernor: ";
+			try {
+				this.cpuInfo += SystemUtils.getGovernor();
+			} catch (Exception exception) {
+				this.cpuInfo += "Error";
+				CommonClass.myLog(settings, exception.getMessage(),
+						CommonClass.YES);
+			}
+
+			this.kernelInfo = SystemUtils.getKernelInfo();
+
+			return null;
+		}
+
+		@Override
+		protected void onPostExecute(Void v) {
+			if (HomeActivity.this._uiTextView_CpuInfoString != null)
+				HomeActivity.this._uiTextView_CpuInfoString
+						.setText(this.cpuInfo);
+
+			if (HomeActivity.this._uiKernelString != null)
+				HomeActivity.this._uiKernelString.setText(HomeActivity._app
+						.getKernelVersion());
 		}
 	}
 
@@ -1161,6 +1241,7 @@ public class HomeActivity extends Activity {
 				CommonClass.YES);
 	}
 
+	@SuppressWarnings("deprecation")
 	void function_ResetTimer() {
 		Intent batteryIntent = (getApplicationContext().registerReceiver(null,
 				new IntentFilter(Intent.ACTION_BATTERY_CHANGED)));

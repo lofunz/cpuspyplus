@@ -28,10 +28,10 @@ public class simpleUncaughtExceptionHandler implements UncaughtExceptionHandler 
 		try {
 			pw = new PrintWriter(new FileWriter(
 					Environment.getExternalStorageDirectory() + "/"
-							+ CommonClass.LOG_FILE, true));
+							+ CommonClass.PATH_LOG_FILE, true));
 			// Log.e(commonsVars.TAG, ex.getMessage());
 			Log.e("HomeActivity", "uncaughtException: must check "
-					+ CommonClass.LOG_FILE + " file. " + thread.getName()
+					+ CommonClass.PATH_LOG_FILE + " file. " + thread.getName()
 					+ " : " + ex.getMessage());
 
 			ex.printStackTrace(pw);
