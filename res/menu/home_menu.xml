@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
-
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >  
+    
     <!-- 0 -->
     <item
         android:id="@+id/menu_compare_files"
@@ -48,5 +48,9 @@
         android:id="@+id/menu_impostazioni"
         android:icon="@drawable/ic_menu_settings"
         android:title="Settings"/>
+    
+    <item
+        android:id="@+id/menu_app_test"
+        android:title="App Test"/>
 
 </menu>
