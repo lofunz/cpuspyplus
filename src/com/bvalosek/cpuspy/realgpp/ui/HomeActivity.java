@@ -577,8 +577,13 @@ public class HomeActivity extends Activity {
 					.getDefaultSharedPreferences(context).getInt(
 							context.getResources().getString(
 									R.string.ThresholdFreqsToHide), 1);
-			String title = "Show/Hide ";
-			title += Integer.toString(percetage2hideStates) + "% used stats";
+
+			String title = getResources().getString(
+					R.string.menu_perc_1st_part)
+					+ " "
+					+ Integer.toString(percetage2hideStates)
+					+ getResources().getString(
+							R.string.menu_perc_2nd_part);
 			menu.getItem(5).setTitle(title);
 			menu.getItem(5).setVisible(true); // view 1%
 
@@ -659,11 +664,11 @@ public class HomeActivity extends Activity {
 		if (isBrOn == CommonClass.YES)
 
 			tv.setText(getResources().getString(
-					R.string.ui_header_broadcast_receiver)
+					R.string.ui_header_cable_receiver)
 					+ " ON");
 		else
 			tv.setText(getResources().getString(
-					R.string.ui_header_broadcast_receiver)
+					R.string.ui_header_cable_receiver)
 					+ " OFF");
 
 		/**
@@ -808,8 +813,7 @@ public class HomeActivity extends Activity {
 			long time = monitor_cpu.getTotalStateTime() / 10000 * percHideStats;
 			header = getString(R.string.ui_header_less_1st_part) + " "
 					+ percHideStats;
-			header += getString(R.string.ui_header_less_2nd_part);
-			header += " (i.e. " + sToString(time) + ")";
+			header += "% ( " + sToString(time) + " )";
 
 			this._uiHeaderLessThan1PercStates_HeaderTextView.setText(header);
 			if (less1States.size() > 0) {
@@ -960,10 +964,10 @@ public class HomeActivity extends Activity {
 					.getDefaultSharedPreferences(context).getInt(
 							context.getResources().getString(
 									R.string.ThresholdFreqsToHide), 1);
-			sFreq = "All states < " + Integer.toString(percetage2hideStates)
+			sFreq = getResources().getString(R.string.ui_row_all_states) +" < " + Integer.toString(percetage2hideStates)
 					+ "%";
 		} else if (state.freq == 0) {
-			sFreq = "Deep Sleep";
+			sFreq = getResources().getString(R.string.ui_row_deep_state);
 		} else {
 			sFreq = state.freq / 1000 + " MHz";
 		}

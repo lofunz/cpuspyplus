@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ACTIVITY TEST -->
+    <string name="ui_at_start_bttn">Avvia Test</string>
+    <string name="ui_at_progress_str">Avanzamento:</string>
+    <string name="ui_at_progress_verbose_str">Messaggi:</string>
+
+    <string-array name="all_tests_name">
+        <item>Lettura file state_in_time: </item>
+        <item>Lettura kernel infos: </item>
+        <item>Lettura CPU infos: </item>
+        <item>Lettura CPU freqs range: </item>
+        <item>Lettura CPU scaling range: </item>
+        <item>Lettura governor: </item>
+    </string-array>
+
+    <!-- SYSTEMUTILS -->
+    <string name="str_file_not_exists">Il file non esiste:</string>
+    <string name="str_io_error">Errore IO:</string>
+
+    <!-- LOGFILE -->
+    <string name="ui_la_reload_button">Ricarica Logfile</string>
+    <string name="ui_la_delete_button">Cancella Logfile</string>
+
+    <!-- PREFERENCES - MAIN ACTIVITY -->
+    <string name="ui_pref_header_settings">Impostazioni</string>
+    <string name="ui_pref_header_layout_option">Impostazioni Grafica</string>
+    <string name="ui_pref_header_audio_option">Impostazioni Audio</string>
+    <string name="ui_pref_header_subcategory_audio_option">Impostazioni audio interfaccia</string>
+    <string name="ui_pref_header_layout_cable">Impostazioni Cavo</string>
+    <string name="ui_pref_header_info_contact">Info &amp; Contatti</string>
+    <string name="ui_pref_header_show_info">Mostra Informazioni</string>
+    <string name="ui_pref_header_mail_2_dev">Mail allo sviluppatore</string>
+    <string name="ui_pref_header_xda_thread">XDA forum</string>
+    <string name="ui_pref_header_development">Menu Debug</string>
+    <string name="ui_pref_verbose_app_title">App Verbose</string>
+    <string name="ui_pref_verbose_app_summary">Salva messaggi debug nel logfile</string>
+
+    <!-- PREFERENCES - LAYOUT OPTIONS -->
+    <string name="ui_pref_checkbox_all_states_top_title">Visualizza "raggruppamento" in cima</string>
+    <string name="ui_pref_checkbox_all_states_top_summary">Mostra li come prima riga nel grafico dei frequenze</string>
+    <string name="ui_pref_checkbox_hide_kernel_cpu_info_title">Nascondi Cpu e Kernel Infos</string>
+    <string name="ui_pref_checkbox_hide_kernel_cpu_info_summary">Mostra le infos nascoste in una pagina apposita</string>
+    <string name="ui_pref_seekbar_threshold_title">Soglia di raggruppamento</string>
+    <string name="ui_pref_seekbar_threshold_summary">Gli stati sotto questa soglia % verranno raggruppati</string>
+    <string name="ui_pref_select_themes_title">Seleziona tema</string>
+    <string name="ui_pref_select_themes_summary">Seleziona il tuo tema preferito</string>
+
+    <string-array name="all_theme_name">
+        <item>Tema Classico</item>
+        <item>Nuovo Tema</item>
+    </string-array>
+
+    <!-- PREFERENCES - AUDIO OPTIONS -->
+    <string name="ui_pref_checkbox_enable_ui_sounds_title">Abilita Audio</string>
+    <string name="ui_pref_checkbox_enable_ui_sounds_summary">Abilita Audio nella pagina principale</string>
+    <string name="ui_pref_checkbox_enable_ui_pref_sounds_title">Abilita Audio Preferenze</string>
+    <string name="ui_pref_checkbox_enable_ui_pref_sounds_summary">Abilita Audio nelle impostazioni</string>
+
+    <!-- PREFERENCES - CABLE OPTIONS -->
+    <string name="ui_pref_checkbox_enable_batt_br_title">Abilita eventi cavo</string>
+    <string name="ui_pref_checkbox_enable_batt_br_summary">Abilita reazioni alla (s)connessione del cavo</string>
+    <string name="ui_pref_seekbar_batt_threshold_title">Soglia minima batteria</string>
+    <string name="ui_pref_seekbar_batt_threshold_summary">Livello della batteria che fa reagire l\'app</string>
+    <string name="ThresholdFreqsToHide">ThresholdFreqsToHide</string>
+    <string name="ThresholdActivateTimerKey">ThresholdActivateTimerKey</string>
+    <string name="Pref_delete_connection_data_key">pref_delete_connection_data_key</string>
+    <string name="Pref_show_release_key">pref_show_release_key</string>
+
+    <!-- NO BUTTON LAYOUT -->
+    <string name="ui_header_time_in_state">Tempo negli stati</string>
+    <string name="ui_subheader_time">Durata</string>
+    <string name="ui_subheader_percetage">%</string>
+    <string name="ui_subheader_mhz">MHz</string>
+    <string name="ui_states_warning_str">File degli stati mancante. Il tuo smartphone è compatibile?\n\nSe hai una ROM o kernel non ufficiale, prova a contattare lo sviluppatore per informarlo che il file degli stati non è leggibile.</string>
+    <string name="ui_header_tot_states_time">Statistiche totali</string>
+    <string name="ui_subheader_time_from_boot">Tempo dall\'avvio</string>
+    <string name="ui_subheader_total_state_time">Tempo totale stati</string>
+    <string name="ui_header_battery_stats">Statistiche sin dal reset</string>
+    <string name="ui_subheader_initial_level">Livello iniziale</string>
+    <string name="ui_subheader_juice_lost">Percentuale consumata </string>
+    <string name="ui_header_unused_states">Stati CPU inutilizzati</string>
+    <string name="ui_header_less_1st_part">Stati sotto la soglia del </string>
+    <string name="ui_header_cpu_info">CPU Info</string>
+    <string name="ui_header_kernel_info">Kernel Info</string>
+    <string name="ui_header_cable_receiver">Reazione a (s)connessione cavo: </string>
+    <string name="ui_row_all_states">Stati</string>
+    <string name="ui_row_deep_state">Deep Sleep</string>
+
+    <!-- MENU ITEMS -->
+    <string name="menu_compare_files">CPU Files</string>
+    <string name="menu_log_file">Log File</string>
+    <string name="menu_refresh">Aggiorna</string>
+    <string name="menu_reset">Avvia Timer</string>
+    <string name="menu_restore">Ripristina Timers</string>
+    <string name="menu_perc_1st_part">Mostra/Nascondi stati</string>
+    <string name="menu_perc_2nd_part">%</string>
+    <string name="menu_misc_info">Info Nascoste</string>
+    <string name="menu_settings">Impostazioni</string>
+    <string name="menu_app_test">App Test</string>
+
+</resources>

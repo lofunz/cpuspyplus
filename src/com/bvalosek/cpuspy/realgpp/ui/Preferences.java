@@ -122,9 +122,12 @@ public class Preferences extends PreferenceActivity {
 				if (preference instanceof ListPreference) {
 					ListPreference lp = (ListPreference) preference;
 					String nv = (String) newValue;
+					String[] array = getResources().getStringArray(R.array.all_theme_name);
+					
 					lp.setValue((String) newValue);
 
-					if (nv.equals(CommonClass.THEME_NO_BUTTON)) {
+					if (nv.equals(array[0])) {
+						// layout without buttons
 						Preferences.this.settings
 								.edit()
 								.putString(CommonClass.PREF_THEME_SELECTION,

@@ -2,13 +2,7 @@
 <resources>
 
     <string name="app_name">CPU Spy Plus - XDA</string>
-    <string name="version_name">0.5.23</string>
-    <string name="ui_header_less_1st_part">Less than </string>
-    <string name="ui_header_less_2nd_part">% usage states</string>
-    <string name="ui_header_time_from_boot">Time since boot</string>
-    <string name="ui_header_broadcast_receiver">Listening for cable events</string>
-    <string name="ui_header_total_state_time">Total state time</string>
-    <string name="ui_header_battery_stats">Statistics Since Reset/Unplugged</string>
+    <string name="version_name">0.5.24</string>
 
     <!-- ACTIVITY TEST -->
     <string name="ui_at_start_bttn">Start Tests</string>
@@ -88,5 +82,38 @@
     <string name="ThresholdActivateTimerKey">ThresholdActivateTimerKey</string>
     <string name="Pref_delete_connection_data_key">pref_delete_connection_data_key</string>
     <string name="Pref_show_release_key">pref_show_release_key</string>
+
+    <!-- NO BUTTON LAYOUT -->
+    <string name="ui_header_time_in_state">Time In State</string>
+    <string name="ui_subheader_time">Time</string>
+    <string name="ui_subheader_percetage">%</string>
+    <string name="ui_subheader_mhz">MHz</string>
+    <string name="ui_states_warning_str">No states file found. Are you sure your phone is compatible?\n\nIf you are running a custom ROM or kernel, try contacting its developer to inform him that the states file is not readable.</string>
+    <string name="ui_header_tot_states_time">Total statistics</string>
+    <string name="ui_subheader_time_from_boot">Time since boot</string>
+    <string name="ui_subheader_total_state_time">Total state time</string>
+    <string name="ui_header_battery_stats">Statistics Since Reset/Unplugged</string>
+    <string name="ui_subheader_initial_level">Initial level</string>
+    <string name="ui_subheader_juice_lost">Juice Lost</string>
+    <string name="ui_header_unused_states">Unused CPU states</string>
+    <string name="ui_header_cpu_info">CPU Info</string>
+    <string name="ui_header_kernel_info">Kernel Info</string>
+    <string name="ui_header_less_1st_part">States under the thereshold of</string>
+    <string name="ui_header_cable_receiver">Listening for cable events</string>
+    <string name="ui_row_all_states">All states</string>
+    <string name="ui_row_deep_state">Deep Sleep</string>
+    <string name="ui_content_desription_image"></string>
+
+    <!-- MENU ITEMS -->
+    <string name="menu_compare_files">CPU Files</string>
+    <string name="menu_log_file">Log File</string>
+    <string name="menu_refresh">Refresh</string>
+    <string name="menu_reset">Reset Timers</string>
+    <string name="menu_restore">Restore Timers</string>
+    <string name="menu_perc_1st_part">Show/Hide</string>
+    <string name="menu_perc_2nd_part">% used stats</string>
+    <string name="menu_misc_info">Misc Info</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_app_test">App Test</string>
 
 </resources>

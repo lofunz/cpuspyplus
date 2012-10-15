@@ -5,52 +5,52 @@
     <item
         android:id="@+id/menu_compare_files"
         android:icon="@drawable/ic_menu_find"
-        android:title="CPU Files"/>
+        android:title="@string/menu_compare_files"/>
 
     <!-- 1 -->
     <item
         android:id="@+id/menu_log_file"
         android:icon="@drawable/ic_menu_logfile"
-        android:title="Log File"/>
+        android:title="@string/menu_log_file"/>
 
     <!-- 2 -->
     <item
         android:id="@+id/menu_refresh"
         android:icon="@drawable/ic_menu_refresh"
-        android:title="Refresh"/>
+        android:title="@string/menu_refresh"/>
 
     <!-- 3 -->
     <item
         android:id="@+id/menu_reset"
         android:icon="@drawable/reset_timer"
-        android:title="Reset Timers"/>
+        android:title="@string/menu_reset"/>
 
     <!-- 4 -->
     <item
         android:id="@+id/menu_restore"
         android:icon="@drawable/restore_timer"
-        android:title="Restore Timers"/>
+        android:title="@string/menu_restore"/>
 
     <!-- 5 -->
     <item
         android:id="@+id/menu_1perc"
         android:icon="@drawable/ic_menu_view"
-        android:title="Show/Hide"/>
+        android:title="@string/menu_perc_1st_part"/>
 
     <!-- 6 -->
     <item
         android:id="@+id/menu_misc_info"
         android:icon="@drawable/misc"
-        android:title="Misc Info"/>
+        android:title="@string/menu_misc_info"/>
 
     <!-- 7 -->
     <item
         android:id="@+id/menu_impostazioni"
         android:icon="@drawable/ic_menu_settings"
-        android:title="Settings"/>
+        android:title="@string/menu_settings"/>
     
     <item
         android:id="@+id/menu_app_test"
-        android:title="App Test"/>
+        android:title="@string/menu_app_test"/>
 
 </menu>

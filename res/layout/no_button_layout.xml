@@ -33,13 +33,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:paddingRight="10dp"
-                        android:src="@drawable/arrow_up_float" />
-
+                        android:src="@drawable/arrow_up_float"
+                        android:contentDescription="@string/ui_content_desription_image" />
+
                     <TextView
                         android:id="@+id/TextView01"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:text="Time In State" />
+                        android:text="@string/ui_header_time_in_state" />
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -49,23 +51,23 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:orientation="horizontal" >
-
+
                     <TextView
                         android:id="@+id/ui_submenu_MHz"
                         android:layout_width="0dip"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="5dp"
                         android:layout_weight=".50"
-                        android:text="MHz" />
-
+                        android:text="@string/ui_subheader_mhz" />
+
                     <TextView
                         android:id="@+id/ui_submenu_time_cpu0"
                         android:layout_width="0dip"
                         android:layout_height="match_parent"
                         android:layout_weight=".30"
                         android:gravity="right"
-                        android:text="Time" />
-
+                        android:text="@string/ui_subheader_time" />
+
                     <TextView
                         android:id="@+id/ui_submenu_freq_cpu0"
                         android:layout_width="0dip"
@@ -73,7 +75,8 @@
                         android:layout_marginRight="5dp"
                         android:layout_weight=".20"
                         android:gravity="right"
-                        android:text="%" />
+                        android:text="@string/ui_subheader_percetage" />
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -101,7 +104,7 @@
                     android:layout_height="wrap_content"
                     android:background="#551111"
                     android:padding="15dp"
-                    android:text="No states file found. Are you sure your phone is compatible?\n\nIf you are running a custom ROM or kernel, try contacting its developer to inform him that the states file is not readable."
+                    android:text="@string/ui_states_warning_str"
                     android:textColor="#ffffff"
                     android:textSize="20dp"
                     android:visibility="gone" />
@@ -117,7 +120,7 @@
                         android:id="@+id/ui_header_textview_tot_states_time"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:text="Total statistics" />
+                        android:text="@string/ui_header_tot_states_time" />
                 </LinearLayout>
 
                 <!-- <TextView -->
@@ -140,7 +143,7 @@
                         android:orientation="horizontal"
                         android:paddingLeft="5dp"
                         android:paddingRight="5dp" >
-
+
                         <TextView
                             android:id="@+id/ui_header_since_boot_time"
                             style="@style/infoHeader_subMenu"
@@ -148,8 +151,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight=".50"
                             android:gravity="center_horizontal"
-                            android:text="@string/ui_header_time_from_boot" />
-
+                            android:text="@string/ui_subheader_time_from_boot" />
+
                         <TextView
                             android:id="@+id/ui_header_total_state_time"
                             style="@style/infoHeader_subMenu"
@@ -157,7 +160,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight=".50"
                             android:gravity="center_horizontal"
-                            android:text="@string/ui_header_total_state_time" />
+                            android:text="@string/ui_subheader_total_state_time" />
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -220,13 +224,13 @@
                             android:layout_height="match_parent"
                             android:layout_weight=".33"
                             android:orientation="vertical" >
-
+
                             <TextView
                                 style="@style/infoHeader_subMenu"
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center_horizontal"
-                                android:text="Initial Level" />
+                                android:text="@string/ui_subheader_initial_level" />
 
                             <TextView
                                 android:id="@+id/ui_battery_level_percentage_start"
@@ -245,14 +249,14 @@
                             android:layout_height="wrap_content"
                             android:layout_weight=".33"
                             android:orientation="vertical" >
-
+
                             <TextView
                                 android:id="@+id/ui_header_battery_drop_level"
                                 style="@style/infoHeader_subMenu"
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center_horizontal"
-                                android:text="Juice Lost" />
+                                android:text="@string/ui_subheader_juice_lost" />
 
                             <TextView
                                 android:id="@+id/ui_battery_level_percentage_now"
@@ -305,13 +309,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:paddingRight="10dp"
-                        android:src="@drawable/arrow_up_float" />
+                        android:src="@drawable/arrow_up_float"
+                        android:contentDescription="@string/ui_content_desription_image" />
 
                     <TextView
                         android:id="@+id/TextView04"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:text="Unused CPU states" />
+                        android:text="@string/ui_header_unused_states" />
                 </LinearLayout>
 
                 <TextView
@@ -334,7 +339,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:paddingRight="10dp"
-                        android:src="@drawable/arrow_up_float" />
+                        android:src="@drawable/arrow_up_float"
+                        android:contentDescription="@string/ui_content_desription_image" />
 
                     <TextView
                         android:id="@+id/TextView_less1perc_states"
@@ -365,17 +371,19 @@
                         android:orientation="horizontal" >
 
                         <ImageView
+                            android:contentDescription="@string/ui_content_desription_image"
                             android:id="@+id/ImageView_arrow_cpu_info"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:paddingRight="10dp"
                             android:src="@drawable/arrow_up_float" />
-
+
                         <TextView
                             android:id="@+id/TextView02"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:text="Cpu Info" />
+                            android:text="@string/ui_header_cpu_info" />
+
                     </LinearLayout>
 
                     <TextView
@@ -405,17 +413,19 @@
                         android:orientation="horizontal" >
 
                         <ImageView
+                            android:contentDescription="@string/ui_content_desription_image"
                             android:id="@+id/ImageView_arrow_kernel_info"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:paddingRight="10dp"
                             android:src="@drawable/arrow_up_float" />
-
+
                         <TextView
                             android:id="@+id/TextView03"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:text="Kernel Info" />
+                            android:text="@string/ui_header_kernel_info" />
+
                     </LinearLayout>
 
                     <TextView
@@ -429,13 +439,14 @@
                         android:textColor="#dddddd"
                         android:textSize="16dp" />
                 </LinearLayout>
-
+
                 <TextView
                     android:id="@+id/ui_header_broadcast_receiver"
                     style="@style/infoHeader_4BR_at_bottom_layout"
                     android:layout_marginBottom="5dp"
                     android:gravity="center_horizontal"
-                    android:text="@string/ui_header_broadcast_receiver" />
+                    android:text="@string/ui_header_cable_receiver" />
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
