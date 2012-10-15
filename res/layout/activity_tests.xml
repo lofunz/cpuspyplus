@@ -9,29 +9,28 @@
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:orientation="vertical" >
-
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:layout_weight=".60"
             android:orientation="vertical" >
-
+
             <Button
                 android:id="@+id/button_start_tests"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight=".60"
-                android:text="Start Tests" />
-
+                android:text="@string/ui_at_start_bttn" />
         </LinearLayout>
-
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center" >
-
+
             <TextView
                 android:id="@+id/TextView02"
                 android:layout_width="wrap_content"
@@ -39,9 +38,9 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="5dp"
-                android:text="Progress:"
+                android:text="@string/ui_at_progress_str"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
-
+
             <TextView
                 android:id="@+id/textView_progress_stats"
                 android:layout_width="wrap_content"
@@ -49,28 +48,26 @@
                 android:layout_gravity="center"
                 android:text="0 / 0"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
-
         </LinearLayout>
-
+
         <ProgressBar
             android:id="@+id/progressBar1"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="30dp" />
-
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight=".60"
-            android:text="Messages:"
+            android:text="@string/ui_at_progress_verbose_str"
             android:textAppearance="?android:attr/textAppearanceMedium" />
-
+
         <TextView
             android:id="@+id/textView_testlog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium" />
-
     </LinearLayout>
 
 </ScrollView>

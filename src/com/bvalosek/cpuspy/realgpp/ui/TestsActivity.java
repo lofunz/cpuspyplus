@@ -15,7 +15,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 /*
- * It tries to execute all the silesystem reads necessary to the app
+ * It tries to execute all the file system reads necessary to the app
  */
 
 public class TestsActivity extends Activity {
@@ -24,15 +24,8 @@ public class TestsActivity extends Activity {
 	TextView progressStat, logOperations;
 	Button btt_start_tests;
 	
-	String[] all_tests = {
-			"Reading state_in_time file: ",
-			"Reading kernel infos: ",
-			"Reading CPU infos:",
-			"Reading CPU freqs range: ",
-			"Reading CPU scaling range: ",
-			"Reading governor: "
-	};
-
+	String[] all_tests;
+	
 	public class BackgroundAsyncTask extends AsyncTask<Void, String, Void> {
 
 		@Override
@@ -63,9 +56,9 @@ public class TestsActivity extends Activity {
 			
 			if (str.startsWith("File doesn't exist:\n")
 					|| str.startsWith("IO error:\n")) {
-				progress[1] += "FAILED\n";
+				progress[1] += " FAILED\n";
 			} else {
-				progress[1] += "PASSED\n";
+				progress[1] += " PASSED\n";
 			}
 			
 			progress[2] = progress[0] + " / " + String.valueOf(TestsActivity.this.MAX_VALUE_BAR);
@@ -84,9 +77,9 @@ public class TestsActivity extends Activity {
 			
 			if (str.startsWith("File doesn't exist:\n")
 					|| str.startsWith("IO error:\n")) {
-				progress[1] += "FAILED\n";
+				progress[1] += " FAILED\n";
 			} else {
-				progress[1] += "PASSED\n";
+				progress[1] += " PASSED\n";
 			}
 			
 			progress[2] = progress[0] + " / " + String.valueOf(TestsActivity.this.MAX_VALUE_BAR);
@@ -104,9 +97,9 @@ public class TestsActivity extends Activity {
 			
 			if (str.startsWith("File doesn't exist:\n")
 					|| str.startsWith("IO error:\n")) {
-				progress[1] += "FAILED\n";
+				progress[1] += " FAILED\n";
 			} else {
-				progress[1] += "PASSED\n";
+				progress[1] += " PASSED\n";
 			}
 			
 			progress[2] = progress[0] + " / " + String.valueOf(TestsActivity.this.MAX_VALUE_BAR);
@@ -124,9 +117,9 @@ public class TestsActivity extends Activity {
 			int min = SystemUtils.getCPUFrequencyMin();
 			
 			if ( max == 0 && min == 0) {
-				progress[1] += "FAILED\n";
+				progress[1] += " FAILED\n";
 			} else {
-				progress[1] += "PASSED\n";
+				progress[1] += " PASSED\n";
 			}
 			
 			progress[2] = progress[0] + " / " + String.valueOf(TestsActivity.this.MAX_VALUE_BAR);
@@ -145,9 +138,9 @@ public class TestsActivity extends Activity {
 			 min = SystemUtils.getCPUFrequencyMinScaling();
 			
 			if ( max == 0 && min == 0) {
-				progress[1] += "FAILED\n";
+				progress[1] += " FAILED\n";
 			} else {
-				progress[1] += "PASSED\n";
+				progress[1] += " PASSED\n";
 			}
 			
 			progress[2] = progress[0] + " / " + String.valueOf(TestsActivity.this.MAX_VALUE_BAR);
@@ -165,9 +158,9 @@ public class TestsActivity extends Activity {
 			
 			if (str.startsWith("File doesn't exist:\n")
 					|| str.startsWith("IO error:\n")) {
-				progress[1] += "FAILED\n";
+				progress[1] += " FAILED\n";
 			} else {
-				progress[1] += "PASSED\n";
+				progress[1] += " PASSED\n";
 			}
 			
 			progress[2] = progress[0] + " / " + String.valueOf(TestsActivity.this.MAX_VALUE_BAR);
@@ -196,8 +189,9 @@ public class TestsActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_tests);
 		
+		this.all_tests = getResources().getStringArray(R.array.all_tests_name);
+		
 		this.MAX_VALUE_BAR = this.all_tests.length;
-//		MAX_VALUE_BAR = 2;
 		
 		this.progressBar = (ProgressBar) findViewById(R.id.progressBar1);
 		this.logOperations = ( TextView) findViewById(R.id.textView_testlog);
@@ -214,7 +208,5 @@ public class TestsActivity extends Activity {
 			    new BackgroundAsyncTask().execute();
 			    v.setClickable(false);
 			   }});
-		
-		
 	}
 }

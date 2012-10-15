@@ -18,9 +18,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.BatteryManager;
@@ -730,7 +727,7 @@ public class HomeActivity extends Activity {
 			if (dim != 0)
 				break;
 		}
-		
+
 		if (dim == 0) {
 			findViews();
 
@@ -757,7 +754,7 @@ public class HomeActivity extends Activity {
 			this._uiKernelString.setText(HomeActivity._app.getKernelVersion());
 
 			this._uiStatesWarning.setVisibility(View.VISIBLE);
-			
+
 			new NotCompatibleTask().execute();
 
 			return;
@@ -1022,7 +1019,7 @@ public class HomeActivity extends Activity {
 			updateView();
 		}
 	}
-	
+
 	public class NotCompatibleTask extends AsyncTask<Void, Void, Void> {
 
 		@Override
@@ -1035,7 +1032,8 @@ public class HomeActivity extends Activity {
 		@Override
 		protected void onPostExecute(Void v) {
 
-			AlertDialog alertDialog = new AlertDialog.Builder(HomeActivity.this).create();
+			AlertDialog alertDialog = new AlertDialog.Builder(HomeActivity.this)
+					.create();
 			alertDialog.setTitle("Attention");
 			alertDialog
 					.setMessage("There was an error reading the CPU states file.\nDo you want to run the compatibility test?");

@@ -5,17 +5,17 @@
 
     <PreferenceCategory
         android:key="main_pref_category"
-        android:title="@string/Impostazioni" >
+        android:title="@string/ui_pref_header_settings" >
     </PreferenceCategory>
 
     <PreferenceScreen
         android:key="layout_options"
-        android:title="Layout Options" >
-        <PreferenceCategory android:title="Layout Options" >
+        android:title="@string/ui_pref_header_layout_option" >
+        <PreferenceCategory android:title="@string/ui_pref_header_layout_option" >
             <CheckBoxPreference
                 android:key="pref_less1perc_top_key"
-                android:summary="Show them as first row of the bar graph"
-                android:title="View \&apos;All states\&apos; on top" />
+                android:summary="@string/ui_pref_checkbox_all_states_top_summary"
+                android:title="@string/ui_pref_checkbox_all_states_top_title" />
             <CheckBoxPreference
                 android:key="pref_hide_kernel_cpu_info_key"
                 android:summary="New info layout through menu option"
@@ -25,24 +25,24 @@
                 android:defaultValue="1"
                 android:key="@string/ThresholdFreqsToHide"
                 android:max="41"
-                android:summary="States under this value of % will be grouped"
-                android:title="Threshold to group states"
+                android:summary="@string/ui_pref_seekbar_threshold_summary"
+                android:title="@string/ui_pref_seekbar_threshold_title"
                 robobunny:min="1"
                 robobunny:unitsLeft=""
                 robobunny:unitsRight="%" />
 
             <ListPreference
-                android:entries="@array/theme_name"
-                android:entryValues="@array/theme_name"
+                android:entries="@array/all_theme_name"
+                android:entryValues="@array/all_theme_name"
                 android:key="pref_theme_selection"
-                android:summary="Select your favourite theme"
-                android:title="Select theme" />
+                android:summary="@string/ui_pref_select_themes_summary"
+                android:title="@string/ui_pref_select_themes_title" />
         </PreferenceCategory>
     </PreferenceScreen>
     <PreferenceScreen
         android:key="audio_options"
-        android:title="Audio Options" >
-        <PreferenceCategory android:title="UI Sounds Option" >
+        android:title="@string/ui_pref_header_audio_option" >
+        <PreferenceCategory android:title="@string/ui_pref_header_subcategory_audio_option" >
             <CheckBoxPreference
                 android:key="pref_enable_ui_sounds"
                 android:summary="Enable main layout UI sounds"
@@ -55,7 +55,7 @@
     </PreferenceScreen>
     <PreferenceScreen
         android:key="cable_options"
-        android:title="Cable Options" >
+        android:title="@string/ui_pref_header_layout_cable" >
         <PreferenceCategory android:title="Cable Options" >
             <CheckBoxPreference
                 android:defaultValue="true"
@@ -67,8 +67,8 @@
                 android:defaultValue="100"
                 android:key="ThresholdActivateTimerKey"
                 android:max="100"
-                android:summary="@string/ThresholdActivateTimerSumary"
-                android:title="@string/ThresholdActivateTimerTitle"
+                android:summary="@string/ui_pref_seekbar_batt_threshold_summary"
+                android:title="@string/ui_pref_seekbar_batt_threshold_title"
                 robobunny:min="0"
                 robobunny:unitsLeft=""
                 robobunny:unitsRight="%" />
@@ -78,28 +78,28 @@
     <PreferenceCategory
         android:key="info_contacts"
         android:shouldDisableView="false"
-        android:title="Info &amp; Contacts" >
+        android:title="@string/ui_pref_header_info_contact" >
         <Preference
             android:key="pref_show_info_key"
-            android:title="Show informations" />
+            android:title="@string/ui_pref_header_show_info" />
         
         <Preference
             android:key="pref_write_email_key"
-            android:title="Mail 2 Developer" />
+            android:title="@string/ui_pref_header_mail_2_dev" />
         
         <Preference
             android:key="pref_xda_thread_key"
-            android:title="XDA forum thread" />
+            android:title="@string/ui_pref_header_xda_thread" />
     </PreferenceCategory>
     
     <PreferenceCategory
         android:key="dev_pref_menu"
         android:shouldDisableView="false"
-        android:title="Development Menu" >
+        android:title="@string/ui_pref_header_development" >
         <CheckBoxPreference
             android:key="verbose_key"
-            android:summary="Save messages to logfile"
-            android:title="Verbose App" />
+            android:summary="@string/ui_pref_verbose_app_summary"
+            android:title="@string/ui_pref_verbose_app_title" />
     </PreferenceCategory>
 
 </PreferenceScreen>

@@ -21,27 +21,31 @@
                 android:layout_marginTop="10dp"
                 android:layout_weight=".50"
                 android:orientation="vertical" >
-
+
                 <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
                     android:text="CPU0"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
-
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="File affected_cpus:" />
+                    android:text="File affected_cpus:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <TextView
                     android:id="@+id/textViewCpu0AffectedCpus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
-
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="File time_in_state:" />
+                    android:layout_marginBottom="15dp"
+                    android:text="File time_in_state:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <TextView
                     android:id="@+id/textViewCpu0"
@@ -55,27 +59,31 @@
                 android:layout_marginTop="10dp"
                 android:layout_weight=".50"
                 android:orientation="vertical" >
- 
+ 
                 <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
                     android:text="CPU1"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
-
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="File affected_cpus:" />
+                    android:text="File affected_cpus:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <TextView
                     android:id="@+id/textViewCpu1AffectedCpus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
-
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="File time_in_state:" />
+                    android:layout_marginBottom="15dp"
+                    android:text="File time_in_state:"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
 
                 <TextView
                     android:id="@+id/textViewCpu1"

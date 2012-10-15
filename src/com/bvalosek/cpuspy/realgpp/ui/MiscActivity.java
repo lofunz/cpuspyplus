@@ -21,12 +21,12 @@ public class MiscActivity extends Activity {
 		String str = "";
 		TextView tv = (TextView) findViewById(R.id.tv_misc_cpuInfo);
 
-		str = "Freqs range: "
+		str = getResources().getString(R.string.ui_misc_freqs_range)+" " 
 				+ String.valueOf(SystemUtils.getCPUFrequencyMin() / 1000)
 				+ "MHz - "
 				+ String.valueOf(SystemUtils.getCPUFrequencyMax() / 1000)
 				+ "MHz\n";
-		str += "Scaling range: "
+		str += getResources().getString(R.string.ui_misc_scaling_range) +" " 
 				+ String.valueOf(SystemUtils.getCPUFrequencyMinScaling() / 1000)
 				+ "MHz - "
 				+ String.valueOf(SystemUtils.getCPUFrequencyMaxScaling() / 1000)

@@ -15,8 +15,6 @@ import android.content.SharedPreferences;
 /** main application class */
 public class CpuSpyApp extends Application {
 
-	private static final String TAG = "CpuSpyApp";
-
 	private static final String PREF_NAME = "CpuSpyPreferences";
 	private static final String PREF_OFFSETS = "offsets";
 	/** the long-living object used to monitor the system frequency states */

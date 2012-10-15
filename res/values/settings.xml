@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Impostazioni">Settings</string>
-    <string name="ThresholdFreqsToHide">ThresholdFreqsToHide</string>
-    <string name="ThresholdActivateTimerKey">ThresholdActivateTimerKey</string>
-    <string name="ThresholdActivateTimerTitle">Minimum battery level for reset</string>
-    <string name="ThresholdActivateTimerSumary">Threshold when cable is unplugged</string>
-    <string name="Pref_delete_connection_data_key">pref_delete_connection_data_key</string>
-    <string name="Pref_show_release_key">pref_show_release_key</string>
-    <integer-array name="theme_choice">
-        <item >10</item>
-        <item >11</item>
-    </integer-array>
-    <string-array name="theme_name">
-        <item >Classic Theme</item>
-        <item >New Theme</item>
-    </string-array>
+    
     
 
 </resources>

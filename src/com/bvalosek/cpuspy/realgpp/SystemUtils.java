@@ -7,6 +7,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.NumberFormatException;
 
+import com.bvalosek.cpuspy.realgpp.ui.HomeActivity;
+
 public class SystemUtils {
 	/**
 	 * @return in kiloHertz.
@@ -15,8 +17,7 @@ public class SystemUtils {
 		int ret = 0;
 		try {
 			String valueStr = SystemUtils.readFile(
-					CommonClass.PATH_SCALING_MIN_FREQ)
-					.replace("\n", "");
+					CommonClass.PATH_SCALING_MIN_FREQ).replace("\n", "");
 			ret = Integer.valueOf(valueStr);
 		} catch (NumberFormatException nfe) {
 			ret = 0;
@@ -31,8 +32,7 @@ public class SystemUtils {
 		int ret = 0;
 		try {
 			String valueStr = SystemUtils.readFile(
-					CommonClass.PATH_SCALING_MAX_FREQ)
-					.replace("\n", "");
+					CommonClass.PATH_SCALING_MAX_FREQ).replace("\n", "");
 			ret = Integer.valueOf(valueStr);
 		} catch (NumberFormatException nfe) {
 			ret = 0;
@@ -47,8 +47,7 @@ public class SystemUtils {
 		int ret = 0;
 		try {
 			String valueStr = SystemUtils.readFile(
-					CommonClass.PATH_CPUINFO_MAX_FREQ)
-					.replace("\n", "");
+					CommonClass.PATH_CPUINFO_MAX_FREQ).replace("\n", "");
 			ret = Integer.valueOf(valueStr);
 		} catch (NumberFormatException nfe) {
 			ret = 0;
@@ -63,8 +62,7 @@ public class SystemUtils {
 		int ret = 0;
 		try {
 			String valueStr = SystemUtils.readFile(
-					CommonClass.PATH_CPUINFO_MIN_FREQ)
-					.replace("\n", "");
+					CommonClass.PATH_CPUINFO_MIN_FREQ).replace("\n", "");
 			ret = Integer.valueOf(valueStr);
 		} catch (NumberFormatException nfe) {
 			ret = 0;
@@ -72,16 +70,18 @@ public class SystemUtils {
 		return ret;
 	}
 
-	public static String getGovernor(){
-		String governorStr = SystemUtils
-				.readFile(CommonClass.PATH_SCALING_GOVERNOR).replace("\n","");;
+	public static String getGovernor() {
+		String governorStr = SystemUtils.readFile(
+				CommonClass.PATH_SCALING_GOVERNOR).replace("\n", "");
+		;
 		return governorStr;
 	}
-	
+
 	public static String getKernelInfo() {
-		return SystemUtils.readFile(CommonClass.PATH_KERNEL_INFO).replace("\n","");
+		return SystemUtils.readFile(CommonClass.PATH_KERNEL_INFO).replace("\n",
+				"");
 	}
-	
+
 	public static String getCPUInfo() {
 		return SystemUtils.readFile(CommonClass.PATH_CPU_INFO);
 	}
@@ -102,9 +102,13 @@ public class SystemUtils {
 			// close the file again
 			is.close();
 		} catch (java.io.FileNotFoundException e) {
-			result = "File doesn't exist:\n" + filename;
+			result = HomeActivity.getAppContext().getResources()
+					.getString(R.string.str_file_not_exists)
+					+ "\n" + filename;
 		} catch (IOException exception) {
-			result = "IO error:\n" + filename;
+			result = HomeActivity.getAppContext().getResources()
+					.getString(R.string.str_io_error)
+					+ "\n" + filename;
 		}
 		return result;
 	}
