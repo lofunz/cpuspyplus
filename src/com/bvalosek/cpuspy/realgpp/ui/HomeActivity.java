@@ -6,6 +6,11 @@
 
 package com.bvalosek.cpuspy.realgpp.ui;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -212,6 +217,8 @@ public class HomeActivity extends Activity {
 			ll_cpu_info.setVisibility(View.GONE);
 			ll_kernel_info.setVisibility(View.GONE);
 		}
+
+		new CheckADBlockTask().execute();
 
 		CommonClass.myLog(this.settings, "HomeActivity.onResume() - End",
 				CommonClass.YES);
@@ -578,12 +585,11 @@ public class HomeActivity extends Activity {
 							context.getResources().getString(
 									R.string.ThresholdFreqsToHide), 1);
 
-			String title = getResources().getString(
-					R.string.menu_perc_1st_part)
+			String title = getResources()
+					.getString(R.string.menu_perc_1st_part)
 					+ " "
 					+ Integer.toString(percetage2hideStates)
-					+ getResources().getString(
-							R.string.menu_perc_2nd_part);
+					+ getResources().getString(R.string.menu_perc_2nd_part);
 			menu.getItem(5).setTitle(title);
 			menu.getItem(5).setVisible(true); // view 1%
 
@@ -964,8 +970,8 @@ public class HomeActivity extends Activity {
 					.getDefaultSharedPreferences(context).getInt(
 							context.getResources().getString(
 									R.string.ThresholdFreqsToHide), 1);
-			sFreq = getResources().getString(R.string.ui_row_all_states) +" < " + Integer.toString(percetage2hideStates)
-					+ "%";
+			sFreq = getResources().getString(R.string.ui_row_all_states)
+					+ " < " + Integer.toString(percetage2hideStates) + "%";
 		} else if (state.freq == 0) {
 			sFreq = getResources().getString(R.string.ui_row_deep_state);
 		} else {
@@ -1038,18 +1044,22 @@ public class HomeActivity extends Activity {
 
 			AlertDialog alertDialog = new AlertDialog.Builder(HomeActivity.this)
 					.create();
-			alertDialog.setTitle(getResources().getString(R.string.ui_dialog_header_attention));
-			alertDialog
-					.setMessage(getResources().getString(R.string.ui_dialog_message_not_compatible));
-			alertDialog.setButton(getResources().getString(R.string.ui_dialog_ok_button), new DialogInterface.OnClickListener() {
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					Intent testIntent = new Intent(getApplicationContext(),
-							TestsActivity.class);
-					startActivity(testIntent);
-					dialog.dismiss();
-				}
-			});
+			alertDialog.setTitle(getResources().getString(
+					R.string.ui_dialog_header_attention));
+			alertDialog.setMessage(getResources().getString(
+					R.string.ui_dialog_message_not_compatible));
+			alertDialog.setButton(
+					getResources().getString(R.string.ui_dialog_ok_button),
+					new DialogInterface.OnClickListener() {
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							Intent testIntent = new Intent(
+									getApplicationContext(),
+									TestsActivity.class);
+							startActivity(testIntent);
+							dialog.dismiss();
+						}
+					});
 			alertDialog.setCancelable(true);
 
 			alertDialog.setIcon(R.drawable.warning);
@@ -1061,6 +1071,79 @@ public class HomeActivity extends Activity {
 			wlp.flags &= ~WindowManager.LayoutParams.FLAG_DIM_BEHIND;
 			window.setAttributes(wlp);
 			alertDialog.show();
+		}
+	}
+
+	public class CheckADBlockTask extends AsyncTask<Void, Void, Void> {
+
+		boolean checkToDo = true;
+		boolean isBlockingAds = false;
+
+		@Override
+		protected void onPreExecute() {
+			String title = getTitle().toString();
+			if (title.endsWith("XDA") || title.toUpperCase().endsWith("DONATE")) {
+				checkToDo = false;
+			}
+		}
+
+		@Override
+		protected Void doInBackground(Void... v) {
+			if (checkToDo) {
+				BufferedReader in = null;
+
+				try {
+
+					in = new BufferedReader(new InputStreamReader(
+							new FileInputStream("/etc/hosts")));
+					String line;
+
+					while ((line = in.readLine()) != null) {
+						if (line.contains("admob") || line.contains("ad")) {
+							isBlockingAds = true;
+							break;
+						}
+					}
+					in.close();
+				} catch (UnknownHostException e) {
+					//
+				} catch (IOException e) {
+					isBlockingAds = false;
+				}
+
+			}
+			return null;
+		}
+
+		@SuppressWarnings("deprecation")
+		@Override
+		protected void onPostExecute(Void v) {
+
+			if (isBlockingAds) {
+
+				AlertDialog alertDialog = new AlertDialog.Builder(
+						HomeActivity.this).create();
+				alertDialog.setTitle(getResources().getString(
+						R.string.ui_dialog_header_adsblock));
+				alertDialog.setMessage(getResources().getString(
+						R.string.ui_dialog_message_adsblock));
+				alertDialog.setButton(
+						getResources().getString(R.string.ui_dialog_ok_button),
+						new DialogInterface.OnClickListener() {
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+
+								dialog.dismiss();
+								finish();
+							}
+						});
+				alertDialog.setCancelable(true);
+
+				alertDialog.setIcon(R.drawable.warning);
+
+				alertDialog.show();
+			}
 		}
 	}
 
@@ -1258,16 +1341,19 @@ public class HomeActivity extends Activity {
 				&& isBRon == CommonClass.YES) {
 			AlertDialog alertDialog;
 			alertDialog = new AlertDialog.Builder(HomeActivity.this).create();
-			alertDialog.setTitle(getResources().getString(R.string.ui_dialog_header_attention));
-			alertDialog
-					.setMessage(getResources().getString(R.string.ui_dialog_message_connected_cable));
-			alertDialog.setButton(getResources().getString(R.string.ui_dialog_ok_button), new DialogInterface.OnClickListener() {
-				@Override
-				public void onClick(DialogInterface dialog, int which) {
-					playButtonClickedSound();
-					dialog.dismiss();
-				}
-			});
+			alertDialog.setTitle(getResources().getString(
+					R.string.ui_dialog_header_attention));
+			alertDialog.setMessage(getResources().getString(
+					R.string.ui_dialog_message_connected_cable));
+			alertDialog.setButton(
+					getResources().getString(R.string.ui_dialog_ok_button),
+					new DialogInterface.OnClickListener() {
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							playButtonClickedSound();
+							dialog.dismiss();
+						}
+					});
 			alertDialog.show();
 			return;
 		}

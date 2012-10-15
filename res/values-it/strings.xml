@@ -22,6 +22,22 @@
     <!-- LOGFILE -->
     <string name="ui_la_reload_button">Ricarica Logfile</string>
     <string name="ui_la_delete_button">Cancella Logfile</string>
+    
+      <!-- INFORMATIONS -->
+    <string name="ui_info_layout_main_header">Informazioni</string>
+    <string name="ui_header_new_theme">Pulsanti nuovo tema</string>
+    <string name="ui_btt_show_states_under_perc">Visualizza stati &lt;XY%</string>
+    <string name="ui_btt_hide_states_under_perc">Nascondi stati &lt;XY%</string>
+    <string name="ui_btt_restore_timer">Ripristina timer</string>
+    <string name="ui_btt_reset_timer">Avvia timer</string>
+    <string name="ui_btt_refresh_data">Aggiorna dati</string>
+    <string name="ui_header_show_hide">Mostra/Nascondi contenuto</string>
+    <string name="ui_message_show_hide">Clicca sulle testate principali (quelle scure) per cambiare la visibilità del contenuto sottostante</string>
+	<string name="ui_header_dual_states">Statistiche/Informazioni Dual core</string>
+	<string name="ui_message_dual_states">L\'app non mostra le informazioni dei core perchè, a causa del driver kernel, non è possibile. Per avere le informazioni relative ad ogni core, piuttosto che ogni unità cpu, il dirver del kernel deve essere riscritto. Sebbere sarebbe davvero facile per me, non sono visualizzate neanche le informazioni relative alle unità CPU multiple perchè non dispongo di un device adatto: il mio amato S2 non basta.</string>
+    <string name="ui_header_logfile">Log File</string>
+    <string name="ui_message_logfile">Se l\'opzione "verbose app" è abilitata l\'app salverà dei brevi messaggi nel file "CpuSpy.log", collocato nella memoria esterna.</string>
+   
 
     <!-- PREFERENCES - MAIN ACTIVITY -->
     <string name="ui_pref_header_settings">Impostazioni</string>
@@ -89,6 +105,9 @@
     <string name="ui_dialog_header_attention">Attenzione</string>
     <string name="ui_dialog_message_not_compatible">Si è verificato un errore nellalettura del file degli stati.\nVuoi avviare il test di compatibilità?</string>	
 	<string name="ui_dialog_message_connected_cable">Dispositivo connesso al cavo. Staccalo per avviare il timer.</string>
+	<string name="ui_dialog_header_adsblock">Attenzione AdBlocker</string>
+	<string name="ui_dialog_message_adsblock">Gli annunci che stai bloccando servono ad invogliare lo sviluppo dell\'app. In alternativa c\'è una versione di CPU Spy Plus senza pubblicità nel Play store.</string>
+	<string name="ui_dialog_close_button">Chiudi</string>
 	
 
     <!-- MENU ITEMS -->
@@ -96,7 +115,7 @@
     <string name="menu_log_file">Log File</string>
     <string name="menu_refresh">Aggiorna</string>
     <string name="menu_reset">Avvia Timer</string>
-    <string name="menu_restore">Ripristina Timers</string>
+    <string name="menu_restore">Ripristina Timer</string>
     <string name="menu_perc_1st_part">Mostra/Nascondi stati</string>
     <string name="menu_perc_2nd_part">%</string>
     <string name="menu_misc_info">Info Nascoste</string>

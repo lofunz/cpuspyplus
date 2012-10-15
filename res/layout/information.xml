@@ -20,6 +20,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:contentDescription="@string/ui_content_desription_image"
                 android:src="@drawable/ic_menu_info_details" />
 
             <TextView
@@ -27,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:paddingBottom="10dp"
-                android:text="Information"
+                android:text="@string/ui_info_layout_main_header"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
         </LinearLayout>
 
@@ -35,7 +36,7 @@
             style="@style/infoHeader"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="New Theme Buttons" />
+            android:text="@string/ui_header_new_theme" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -53,16 +54,20 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
                     android:layout_marginLeft="5dp"
+                    android:contentDescription="@string/ui_content_desription_image"
                     android:paddingRight="5dp"
                     android:src="@drawable/ic_menu_view" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
                     android:layout_marginRight="5dp"
                     android:gravity="center_vertical"
-                    android:text="View &lt;XY% states" />
+                    android:text="@string/ui_btt_show_states_under_perc" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -76,6 +81,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
+                    android:contentDescription="@string/ui_content_desription_image"
                     android:paddingRight="5dp"
                     android:src="@drawable/ic_menu_view_hide" />
 
@@ -84,7 +90,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginRight="5dp"
                     android:gravity="center_vertical"
-                    android:text="Hide &lt;XY% states" />
+                    android:text="@string/ui_btt_hide_states_under_perc" />
             </LinearLayout>
         </LinearLayout>
 
@@ -106,6 +112,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
+                    android:contentDescription="@string/ui_content_desription_image"
                     android:paddingRight="5dp"
                     android:src="@drawable/restore_timer" />
 
@@ -114,7 +121,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginRight="5dp"
                     android:gravity="center_vertical"
-                    android:text="Restore timer" />
+                    android:text="@string/ui_btt_restore_timer" />
             </LinearLayout>
 
             <LinearLayout
@@ -128,6 +135,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
+                    android:contentDescription="@string/ui_content_desription_image"
                     android:paddingRight="5dp"
                     android:src="@drawable/reset_timer" />
 
@@ -136,13 +144,14 @@
                     android:layout_height="match_parent"
                     android:layout_marginRight="5dp"
                     android:gravity="center_vertical"
-                    android:text="Reset timer" />
+                    android:text="@string/ui_btt_reset_timer" />
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
             android:layout_marginBottom="5dp"
             android:layout_marginTop="5dp"
             android:gravity="center"
@@ -151,16 +160,20 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="5dp"
+                android:contentDescription="@string/ui_content_desription_image"
                 android:paddingRight="5dp"
                 android:src="@drawable/ic_menu_refresh" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginRight="5dp"
                 android:gravity="center_vertical"
-                android:text="Refresh Data" />
+                android:text="@string/ui_btt_refresh_data" />
+
         </LinearLayout>
 
         <TextView
@@ -168,7 +181,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Show/Hide Content" />
+            android:text="@string/ui_header_show_hide" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -182,39 +195,20 @@
                 android:orientation="horizontal" >
 
                 <ImageView
-                    android:id="@+id/ImageView02"
                     android:layout_width="32dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
+                    android:contentDescription="@string/ui_content_desription_image"
                     android:paddingRight="5dp"
                     android:src="@drawable/arrow_down_float" />
             </LinearLayout>
 
             <TextView
-                android:id="@+id/TextView01"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:text="Click on the main header (almost black ones) to change the relative stats visibility." />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:paddingTop="5dp" >
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="horizontal" >
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-            </LinearLayout>
+                android:text="@string/ui_message_show_hide" />
         </LinearLayout>
 
         <TextView
@@ -222,7 +216,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Dual core stats" />
+            android:text="@string/ui_header_dual_states" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -230,31 +224,21 @@
             android:orientation="horizontal"
             android:paddingTop="5dp" >
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="horizontal" >
-            </LinearLayout>
-
-            <LinearLayout
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/ui_message_dual_states" />
 
-                <TextView
-                    android:id="@+id/TextView02"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:text="The app doesn&apos;t show dual core stats because, according to the driver kernel, it&apos;s not possible. To have the stats for each core, instead of each cpu, the kernel driver must be rewritten. So that&apos;s it for now." />
-            </LinearLayout>
         </LinearLayout>
 
         <TextView
             style="@style/infoHeader"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Log File" />
+            android:text="@string/ui_header_logfile" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -268,10 +252,10 @@
                 android:orientation="horizontal" >
 
                 <ImageView
-                    android:id="@+id/ImageView04"
                     android:layout_width="32dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
+                    android:contentDescription="@string/ui_content_desription_image"
                     android:paddingRight="5dp"
                     android:src="@drawable/file_warning" />
             </LinearLayout>
@@ -281,11 +265,10 @@
                 android:layout_height="wrap_content" >
 
                 <TextView
-                    android:id="@+id/TextView03"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
-                    android:text="If the &quot;verbose app&quot; option is activated the app will print short messages in the &quot;CpuSpy.log&quot; file, which is located in the sdcard. If you have any kind of problem bothering you, please send me a private message on xda forum with this file attacched and I&apos;ll fix as soon as I can." />
+                    android:text="@string/ui_message_logfile" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
