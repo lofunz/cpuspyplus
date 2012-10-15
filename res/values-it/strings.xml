@@ -86,7 +86,10 @@
     <string name="ui_header_kernel_info">Kernel Info</string>
     <string name="ui_header_cable_receiver">Reazione a (s)connessione cavo: </string>
     <string name="ui_row_all_states">Stati</string>
-    <string name="ui_row_deep_state">Deep Sleep</string>
+    <string name="ui_dialog_header_attention">Attenzione</string>
+    <string name="ui_dialog_message_not_compatible">Si è verificato un errore nellalettura del file degli stati.\nVuoi avviare il test di compatibilità?</string>	
+	<string name="ui_dialog_message_connected_cable">Dispositivo connesso al cavo. Staccalo per avviare il timer.</string>
+	
 
     <!-- MENU ITEMS -->
     <string name="menu_compare_files">CPU Files</string>

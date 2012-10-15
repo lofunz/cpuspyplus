@@ -103,7 +103,11 @@
     <string name="ui_row_all_states">All states</string>
     <string name="ui_row_deep_state">Deep Sleep</string>
     <string name="ui_content_desription_image"></string>
-
+    <string name="ui_dialog_header_attention">Attention</string>
+    <string name="ui_dialog_message_not_compatible">There was an error reading the CPU states file.\nDo you want to run the compatibility test?</string>
+	<string name="ui_dialog_ok_button">OK</string>
+	<string name="ui_dialog_message_connected_cable">Device\'s connected to cable. Unplug it to reset timer.</string>
+	
     <!-- MENU ITEMS -->
     <string name="menu_compare_files">CPU Files</string>
     <string name="menu_log_file">Log File</string>

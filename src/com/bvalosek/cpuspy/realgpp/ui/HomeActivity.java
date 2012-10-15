@@ -1038,10 +1038,10 @@ public class HomeActivity extends Activity {
 
 			AlertDialog alertDialog = new AlertDialog.Builder(HomeActivity.this)
 					.create();
-			alertDialog.setTitle("Attention");
+			alertDialog.setTitle(getResources().getString(R.string.ui_dialog_header_attention));
 			alertDialog
-					.setMessage("There was an error reading the CPU states file.\nDo you want to run the compatibility test?");
-			alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+					.setMessage(getResources().getString(R.string.ui_dialog_message_not_compatible));
+			alertDialog.setButton(getResources().getString(R.string.ui_dialog_ok_button), new DialogInterface.OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					Intent testIntent = new Intent(getApplicationContext(),
@@ -1258,10 +1258,10 @@ public class HomeActivity extends Activity {
 				&& isBRon == CommonClass.YES) {
 			AlertDialog alertDialog;
 			alertDialog = new AlertDialog.Builder(HomeActivity.this).create();
-			alertDialog.setTitle("Attention");
+			alertDialog.setTitle(getResources().getString(R.string.ui_dialog_header_attention));
 			alertDialog
-					.setMessage("Phone's connected to cable. Unplug it to reset timer.");
-			alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+					.setMessage(getResources().getString(R.string.ui_dialog_message_connected_cable));
+			alertDialog.setButton(getResources().getString(R.string.ui_dialog_ok_button), new DialogInterface.OnClickListener() {
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					playButtonClickedSound();
