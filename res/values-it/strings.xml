@@ -103,7 +103,7 @@
     <string name="ui_header_cable_receiver">Reazione a (s)connessione cavo: </string>
     <string name="ui_row_all_states">Stati</string>
     <string name="ui_dialog_header_attention">Attenzione</string>
-    <string name="ui_dialog_message_not_compatible">Si è verificato un errore nellalettura del file degli stati.\nVuoi avviare il test di compatibilità?</string>	
+    <string name="ui_dialog_message_not_compatible">Si è verificato un errore nella lettura del file degli stati.\nVuoi avviare il test di compatibilità?</string>	
 	<string name="ui_dialog_message_connected_cable">Dispositivo connesso al cavo. Staccalo per avviare il timer.</string>
 	<string name="ui_dialog_header_adsblock">Attenzione AdBlocker</string>
 	<string name="ui_dialog_message_adsblock">Gli annunci che stai bloccando servono ad invogliare lo sviluppo dell\'app. In alternativa c\'è una versione di CPU Spy Plus senza pubblicità nel Play store.</string>

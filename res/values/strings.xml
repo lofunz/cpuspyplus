@@ -43,12 +43,11 @@
     <string name="ui_btt_refresh_data">Refresh Data</string>
     <string name="ui_header_show_hide">Show/Hide Content</string>
     <string name="ui_message_show_hide">Click on the main header (almost black ones) to change the relative stats visibility.</string>
-	<string name="ui_header_dual_states">Dual core stats</string>
-	<string name="ui_message_dual_states">The app doesn\'t show dual core stats because, according to the driver kernel, it\'s not possible. To have the stats for each core, instead of each cpu, the kernel driver must be rewritten. Although it would be extremely easy for me, the app doesn\'t show the informations of different CPU units because my beloved S2 isn\'t enough: only dual core.</string>
+    <string name="ui_header_dual_states">Dual core stats</string>
+    <string name="ui_message_dual_states">The app doesn\'t show dual core stats because, according to the driver kernel, it\'s not possible. To have the stats for each core, instead of each cpu, the kernel driver must be rewritten. Although it would be extremely easy for me, the app doesn\'t show the informations of different CPU units because my beloved S2 isn\'t enough: only dual core.</string>
     <string name="ui_header_logfile">Log File</string>
     <string name="ui_message_logfile">If the "verbose app" option is activated the app will print short messages in the "CpuSpy.log" file, which is located in the sdcard.</string>
-    
-    
+
     <!-- PREFERENCES - MAIN ACTIVITY -->
     <string name="ui_pref_header_settings">Settings</string>
     <string name="ui_pref_header_layout_option">Layout Option</string>
@@ -138,5 +137,14 @@
     <string name="menu_misc_info">Misc Info</string>
     <string name="menu_settings">Settings</string>
     <string name="menu_app_test">App Test</string>
+
+    <!-- CRASH REPORT -->
+    <string name="crash_toast_text">Ooooops ! An error occurred, please sent the error report to developer to help fix the issue !</string>
+    <string name="crash_dialog_title">CPU Spy Plus\'s crashed</string>
+    <string name="crash_dialog_text">An unexpected error occurred forcing the
+    application to stop. Please help us fix this by sending us error data,
+    all you have to do is click \'OK\'.</string>
+    <string name="crash_dialog_comment_prompt">You might add your comments about the problem below:</string>
+    <string name="crash_dialog_ok_toast">Thank you !</string>
 
 </resources>

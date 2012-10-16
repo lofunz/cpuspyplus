@@ -13,9 +13,8 @@ import android.os.SystemClock;
 import android.preference.PreferenceManager;
 
 /**
- * This is the broadcast reveicer that reacts to cable events: (un)plugging
+ * This is the broadcast receiver that reacts to cable events: (un)plugging
  * 
- * @author realgpp. Created 02/lug/2012.
  */
 public class ChargerReceiver extends BroadcastReceiver {
 	CpuSpyApp _app = null;
