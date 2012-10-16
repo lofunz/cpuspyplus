@@ -64,7 +64,7 @@
                 android:title="Eable Charger Events" />
 
             <com.bvalosek.cpuspy.realgpp.mySeekBarPreference
-                android:defaultValue="100"
+                android:defaultValue="0"
                 android:key="ThresholdActivateTimerKey"
                 android:max="100"
                 android:summary="@string/ui_pref_seekbar_batt_threshold_summary"
