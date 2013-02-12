@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ACTIVITY IDLE STATES -->
+
+    <string name="ui_header_help_info">帮助信息</string>
+    <string name="ui_tv_name">名称：</string>
+    <string name="ui_tv_description">描述：</string>
+    <string name="ui_tv_time">时间：</string>
+    <string name="ui_tv_power">能耗：</string>
+    <string name="ui_tv_power_row">能耗 (W)：</string>
+    <string name="ui_tv_usage">耗用：</string>
+    <string name="ui_tv_description_meaning">当前闲置状态简要说明</string>
+    <string name="ui_tv_time_meaning">闲置状态总计持续时间</string>
+    <string name="ui_tv_power_meaning">当前闲置状态能耗功率（以瓦为单位）</string>
+    <string name="ui_tv_usage_meaning">当前闲置状态进行时间（计数）</string>
+    <string name="ui_tv_no_idle_states">尚未发现闲置状态</string>
+
+    <!-- ACTIVITY TEST -->
+    <string name="ui_at_start_bttn">开始测试</string>
+    <string name="ui_at_progress_str">项目：</string>
+    <string name="ui_at_progress_verbose_str">信息：</string>
+
+    <dimen name="fixed_icon_dimension">50dp</dimen>
+
+    <string-array name="all_tests_name">
+        <item>正在读取 state_in_time 文件：</item>
+        <item>正在读取内核信息：</item>
+        <item>正在读取 CPU 信息：</item>
+        <item>正在读取 CPU 频率范围：</item>
+        <item>正在读取 CPU 运行范围：</item>
+        <item>正在读取调节器信息：</item>
+    </string-array>
+
+    <string name="ui_at_compatibility_warning1">如果第一次测试失败，那么这个应用程序将无法在您的设备上正常工作！</string>
+    <string name="ui_at_compatibility_warning2">如果您运行的是自定义的 ROM 或者内核，请尝试联系开发者说明状态文件无法读取。</string>
+    <string name="ui_at_test_passed">通过</string>
+    <string name="ui_at_test_failed">失败</string>
+    <string name="ui_at_error_in_content">文件内容不正确！</string>
+    <string name="ui_at_alertdialog_title">注意</string>
+    <string name="ui_at_alertdialog_message">测试没有完全顺利通过，您愿意发送文件给开发者以帮助解决这个问题吗？</string>
+    <string name="ui_at_alertdialog_send_bttn">发送邮件</string>
+    <string name="ui_at_alertdialog_cancel_bttn">取消</string>
+    <string name="ui_at_email_subject">测试结果不通过</string>
+    <string name="ui_at_no_email_clients_error">您的设备上没有安装电子邮件客户端。</string>
+    <string name="ui_at_email_add_comment">添加评论：</string>
+    <string name="ui_imageView_contentDescription"></string>
+
+    <!-- SYSTEMUTILS -->
+    <string name="str_file_not_exists">部分文件不存在：</string>
+    <string name="str_io_error">文件读写错误：</string>
+
+    <!-- MISCACTIVITY -->
+    <string name="ui_misc_current_freq">当前主频：</string>
+    <string name="ui_misc_freqs_range">频率范围：</string>
+    <string name="ui_misc_scaling_range">运行范围：</string>
+    <string name="ui_misc_governor">调节器名：</string>
+
+    <!-- LOGFILE -->
+    <string name="ui_la_header">日志文件</string>
+    <string name="ui_la_reload_button">重新读取日志文件</string>
+    <string name="ui_la_delete_button">删除当前日志文件</string>
+
+    <!-- INFORMATIONS -->
+    <string name="ui_info_layout_main_header">信息</string>
+    <string name="ui_header_new_theme">New 主题按钮</string>
+    <string name="ui_btt_show_states_under_perc">查看 &lt;XY% 状态</string>
+    <string name="ui_btt_hide_states_under_perc">隐藏 &lt;XY% 状态</string>
+    <string name="ui_btt_restore_timer">恢复计时器</string>
+    <string name="ui_btt_reset_timer">重置计时器</string>
+    <string name="ui_btt_refresh_data">刷新数据</string>
+    <string name="ui_header_show_hide">显示/隐藏内容</string>
+    <string name="ui_message_show_hide">点击框架顶部（黑色部分）更改相关统计项目的可见性。</string>
+    <string name="ui_header_dual_states">双核心统计</string>
+    <string name="ui_message_dual_states">应用程序若无法显示双核心的统计，可能因为您设备的内核不支持此功能。为了显示每个核心的统计信息而不是每个 CPU 的统计信息，设备的内核驱动必须重写。尽管这对我来说是应该是很容易实现的，这个应用程序如果不显示 CPU 单元信息，因为我心爱的 S2 不足以完善开发其他设备的 CPU 信息读取。</string>
+    <string name="ui_header_logfile">日志文件</string>
+    <string name="ui_message_logfile">如果“程序详情”选项被启用，那么程序将把设备信息输出在“CpuSpy.log”文件中，该文件位于 SDcard 根目录。</string>
+
+    <!-- PREFERENCES - MAIN ACTIVITY -->
+    <string name="ui_pref_header_settings">程序设置</string>
+    <string name="ui_pref_header_layout_option">布局选项</string>
+    <string name="ui_pref_header_audio_option">音频选择</string>
+    <string name="ui_pref_header_subcategory_audio_option">触摸音频选项</string>
+    <string name="ui_pref_header_layout_cable">充电选项</string>
+    <string name="ui_pref_header_info_contact">信息以及联系方式</string>
+    <string name="ui_pref_header_show_info">帮助信息</string>
+    <string name="ui_pref_header_mail_2_dev">发送邮件</string>
+    <string name="ui_pref_header_xda_thread">XDA 主题</string>
+    <string name="ui_pref_header_view_changelog">查看更新日志</string>
+    <string name="ui_pref_buy_donate_title">赞助我买一杯咖啡</string>
+    <string name="ui_pref_buy_donate_summary">咖啡因有助于我写更多的代码 :)</string>
+    <string name="ui_pref_header_development">开发菜单</string>
+    <string name="ui_pref_verbose_app_title">输出日志详情</string>
+    <string name="ui_pref_verbose_app_summary">保存信息到日志文件</string>
+
+    <!-- PREFERENCES - LAYOUT OPTIONS -->
+    <string name="ui_pref_checkbox_all_states_top_title">在顶部显示“所有状态”信息</string>
+    <string name="ui_pref_checkbox_all_states_top_summary">在图表的第一行中显示此信息</string>
+    <string name="ui_pref_checkbox_hide_kernel_cpu_info_title">隐藏 CPU 以及内核信息</string>
+    <string name="ui_pref_checkbox_hide_kernel_cpu_info_summary">通过菜单打开选项的新式信息布局</string>
+    <string name="ui_pref_seekbar_threshold_title">阈值组状态</string>
+    <string name="ui_pref_seekbar_threshold_summary">各状态按“%”分组</string>
+    <string name="ui_pref_select_themes_title">选择主题</string>
+    <string name="ui_pref_select_themes_summary">选择您喜欢的主题</string>
+    <string name="ui_pref_checkbox_hide_deep_sleep_key_title">隐藏“深度睡眠”信息</string>
+    <string name="ui_pref_checkbox_hide_deep_sleep_key_summary_on">启用信息图表显示</string>
+    <string name="ui_pref_checkbox_hide_deep_sleep_key_summary_off">禁用信息图表显示</string>
+    <string name="ui_pref_header_cpu_kernel">CPU 以及内核</string>
+    <string name="ui_pref_checkbox_show_current_freq_title">显示当前 CPU 状态</string>
+    <string name="ui_pref_checkbox_show_current_freq_summary_on">启用当前 CPU 主频监控</string>
+    <string name="ui_pref_checkbox_show_current_freq_summary_off">禁用当前 CPU 主频监控</string>
+    <string name="ui_pref_alertdialog_title">注意</string>
+    <string name="ui_pref_alertdialog_message_part1">您必须关闭”</string>
+    <string name="ui_pref_alertdialog_message_part2">”选项为了查看当前 CPU 主频</string>
+    <string name="pref_show_current_freq_secs_interval_title">刷新间隔</string>
+    <string name="pref_show_current_freq_secs_interval_summary">更新状态间隔的时间长度</string>
+    <string name="ui_pref_alertdialog_reboot_title">现在重启？</string>
+    <string name="ui_pref_alertdialog_reboot_warning_message">请注意，您已经禁用了主界面的 CPU 相关信息显示。您确定要继续设置吗？\n</string>
+    <string name="ui_pref_alertdialog_reboot_message">或许重新启动应用程序会有帮助，您想现在重新启动吗？</string>
+    <string name="ui_pref_alertdialog_reboot_yes_bttn">确认</string>
+    <string name="ui_pref_alertdialog_reboot_no_bttn">取消</string>
+    <string name="pref_enable_swype_gesture_title">启用滑动手势</string>
+    <string name="pref_enable_swype_gesture_summary">通过横向滑动在主界面中显示最常使用功能</string>
+    <string name="pref_show_millis_title">显示单位为毫秒</string>
+    <string name="pref_show_millis_summary">在状态项目中显示单位为毫秒</string>
+    <string name="pref_number_after_floating_point_title">显示状态百分比</string>
+    <string name="pref_number_after_floating_point_summary">数据使用浮点型变量表示</string>
+
+    <string-array name="all_theme_name">
+        <item>*Classic 主题</item>
+        <item>New 主题</item>
+    </string-array>
+
+    <integer-array name="theme_choice">
+        <item>10</item>
+        <item>11</item>
+    </integer-array>
+
+    <!-- PREFERENCES - AUDIO OPTIONS -->
+    <string name="ui_pref_checkbox_enable_ui_sounds_title">启用主界面触摸声音</string>
+    <string name="ui_pref_checkbox_enable_ui_sounds_summary">在主界面中启用触摸声音</string>
+    <string name="ui_pref_checkbox_enable_ui_pref_sounds_title">启用设置界面触摸声音</string>
+    <string name="ui_pref_checkbox_enable_ui_pref_sounds_summary">在设置界面中启用触摸声音</string>
+
+    <!-- PREFERENCES - CABLE OPTIONS -->
+    <string name="ui_pref_checkbox_enable_batt_br_title">启用充电事件</string>
+    <string name="ui_pref_checkbox_enable_batt_br_summary">启用充电设备连接/断开反应</string>
+    <string name="ui_pref_seekbar_batt_threshold_title">最小电量复位等级</string>
+    <string name="ui_pref_seekbar_batt_threshold_summary">到达指定数值时重置计时器</string>
+
+    <!-- NO BUTTON LAYOUT -->
+    <string name="ui_header_time_in_state">状态时间</string>
+    <string name="ui_subheader_time">时间</string>
+    <string name="ui_subheader_percetage">%</string>
+    <string name="ui_subheader_mhz">MHz</string>
+    <string name="ui_states_warning_str">未找到状态文件，您确认您的设备兼容本程序吗？\n\n如果您运行的是自定义的 ROM 或者内核，请尝试联系开发者说明状态文件无法读取。</string>
+    <string name="ui_header_tot_states_time">总共统计</string>
+    <string name="ui_subheader_time_from_boot">启动时间</string>
+    <string name="ui_subheader_total_state_time">状态时间</string>
+    <string name="ui_header_battery_stats">自从上次重置/断开电源</string>
+    <string name="ui_subheader_initial_level">间隔等级</string>
+    <string name="ui_subheader_juice_lost">电池电量已耗尽</string>
+    <string name="ui_header_unused_states">未使用的 CPU 状态</string>
+    <string name="ui_header_cpu_info">CPU 信息</string>
+    <string name="ui_header_kernel_info">内核信息</string>
+    <string name="ui_header_less_1st_part">百分比低于阈值</string>
+    <string name="ui_header_cable_receiver">充电时间监听状态</string>
+    <string name="ui_row_all_states">所有状态</string>
+    <string name="ui_row_deep_state">深度睡眠</string>
+    <string name="ui_content_desription_image"></string>
+    <string name="ui_dialog_header_attention">注意</string>
+    <string name="ui_dialog_message_not_compatible">读取 CPU 状态文件发生错误\n您想要运行的应用程序兼容性测试吗？</string>
+    <string name="ui_dialog_ok_button">确认</string>
+    <string name="ui_dialog_cancel_button">我不在意</string>
+    <string name="ui_dialog_message_connected_cable">设备正在连接充电，拔出以重置计时器。</string>
+    <string name="ui_dialog_header_adsblock">注意广告拦截</string>
+    <string name="ui_dialog_message_adsblock">您屏蔽的广告服务是吸引开发者开发程序的兴趣，CPU Spy Plus 在 Play 市场中有无广告版本。</string>
+    <string name="ui_dialog_close_button">关闭</string>
+    <string name="ui_header_on">开启</string>
+    <string name="ui_header_off">关闭</string>
+    <string name="ui_toast_message_clean_settings">由于最近更改较大，为了避免发生意外的错误情况，所有设置都被重置为默认值。</string>
+
+    <!-- MENU ITEMS -->
+    <string name="menu_compare_files">CPU 文件</string>
+    <string name="menu_log_file">日志文件</string>
+    <string name="menu_refresh">刷新计时</string>
+    <string name="menu_reset">重置计时</string>
+    <string name="menu_restore">恢复计时</string>
+    <string name="menu_perc_1st_part">显示/隐藏小于</string>
+    <string name="menu_perc_2nd_part">% 的已使用状态</string>
+    <string name="menu_misc_info">杂项信息</string>
+    <string name="menu_settings">程序设置</string>
+    <string name="menu_app_test">程序测试</string>
+    <string name="menu_idle_states">闲置状态</string>
+
+    <!-- CRASH REPORT -->
+    <string name="crash_toast_text">哦，槽糕！发生了一个错误，请您发送错误报告给开发者以帮助解决这个错误！</string>
+    <string name="crash_dialog_title">CPU Spy Plus 已经崩溃</string>
+    <string name="crash_dialog_text">发生了一个意外的错误导致
+    应用程序强制停止。请帮助我们修复这个问题通过发送出错数据给我们。
+    您所需要做的就是点击 "确认" 按钮即可。</string>
+    <string name="crash_dialog_comment_prompt">您可以在下面添加您对这个问题的看法或者评论：</string>
+    <string name="crash_dialog_ok_toast">非常感谢！</string>
+    <string name="crash_notif_ticker_text">未知错误，请您发送错误报告给我们。</string>
+    <string name="crash_notif_text">请点击这里帮助开发者修复这个错误。</string>
+
+    <!-- COMPARE FILES ACTIVITY -->
+    <string name="ui_text_view_affected_cups">\"affected_cpus\" 文件：</string>
+    <string name="ui_text_view_time_in_state">\"time_in_state\" 文件：</string>
+
+    <!-- CHANGELOG -->
+    <string name="changelog_full_title">更新日志</string>
+    <string name="changelog_title">新版特性：</string>
+    <string name="changelog_ok_button">确认</string>
+    <string name="changelog_show_full">更多</string>
+
+    <!-- RATE ALERTDIALOG -->
+    <string name="ui_ma_rate_alert_title">请您为 CPU Spy Plus 评分</string>
+    <string name="ui_ma_rate_alert_message">您喜欢 CPU Spy Plus 吗？\n请您花费一点时间为本程序提交好评！\n</string>
+    <string name="ui_ma_rate_alert_bttn_rateit">评分！</string>
+    <string name="ui_ma_rate_alert_bttn_later">稍候再问</string>
+    <string name="ui_ma_rate_alert_bttn_no">不，谢谢</string>
+
+    <!-- CUSTOM AD -->
+    <string name="ui_ma_customAd_top_row_free">想要跳过应用广告？</string>
+    <string name="ui_ma_customAd_bottom_row_free">购买 CPU Spy Plus 捐赠版</string>
+    <string name="ui_ma_customAd_top_row_xda">想要获取相关支持？</string>
+    <string name="ui_ma_customAd_bottom_row_xda">购买 CPU Spy Plus 捐赠版</string>
+
+    <!-- HOWTO ACTIVITY -->
+    <string name="ui_howto_middle_text">若使用设置，您可以在主界面的任何地方横向滑动</string>
+    <string name="ui_howto_button_got_it">确认使用该设置</string>
+    <string name="ui_howto_only_once_text">*** 您将不会再看见这个布局设置 ***</string>
+
+    <!-- CUSTOM TOAST -->
+    <string name="ui_custom_toast_sub_text">在按钮上长按以显示其功能的简要说明</string>
+
+    <!-- ACRA -->
+    <string name="pref_disable_acra">是否确认发送错误报告？</string>
+    <string name="pref_acra_summary_on">仍需要您进行确认</string>
+    <string name="pref_acra_summary_off">禁用应用错误报告</string>
+
+</resources>

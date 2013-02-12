@@ -5,7 +5,22 @@
     <string name="ui_at_start_bttn">Avvia Test</string>
     <string name="ui_at_progress_str">Avanzamento:</string>
     <string name="ui_at_progress_verbose_str">Messaggi:</string>
+    <!-- ACTIVITY IDLE STATES -->
 
+    <string name="ui_header_help_info">Significato informazioni</string>
+    <string name="ui_tv_name">Nome:</string>
+    <string name="ui_tv_description">Descrizione:</string>
+    <string name="ui_tv_time">Tempo:</string>
+    <string name="ui_tv_power">Potenza:</string>
+    <string name="ui_tv_power_row">Potenza (W):</string>
+    <string name="ui_tv_usage">Uso:</string>
+    <string name="ui_tv_description_meaning">Piccola descrizione dello stato</string>
+    <string name="ui_tv_time_meaning">Tempo totale speso nello stato</string>
+    <string name="ui_tv_power_meaning">Potenza consumata dallo stato (in Watts)</string>
+    <string name="ui_tv_usage_meaning">Conteggio utlizzo dello stato</string>
+    <string name="ui_tv_no_idle_states">Non è presente alcuno stato \"idle\".</string>
+    
+    <!-- ACTIVITY TEST -->
     <string-array name="all_tests_name">
         <item>Lettura file state_in_time: </item>
         <item>Lettura kernel infos: </item>
@@ -15,15 +30,31 @@
         <item>Lettura governor: </item>
     </string-array>
 
+    <string name="ui_at_compatibility_warning1">Se il primo test fallisce l\'app non può funzionare!</string>
+    <string name="ui_at_compatibility_warning2">Se hai una ROM o kernel non ufficiale, prova a contattare lo sviluppatore per informarlo che il file degli stati non è leggibile.</string>
+    <string name="ui_at_test_passed">OK</string>
+    <string name="ui_at_test_failed">FALLITA</string>
+    <string name="ui_at_error_in_content">Contenuto del file errato!</string>
+    <string name="ui_at_alertdialog_title">Attenzione</string>
+    <string name="ui_at_alertdialog_message">Test non superato. Vuoi inviare i files allo sviluppatore per poter risolvere il problema?</string>
+    <string name="ui_at_alertdialog_send_bttn">Invia email</string>
+    <string name="ui_at_alertdialog_cancel_bttn">No</string>
+    <string name="ui_at_email_subject">Risultato test fallito</string>
+    <string name="ui_at_no_email_clients_error">Non ci sono client email installati"</string>
+    <string name="ui_at_email_add_comment">Aggiungi commento:</string>
+
     <!-- SYSTEMUTILS -->
     <string name="str_file_not_exists">Il file non esiste:</string>
     <string name="str_io_error">Errore IO:</string>
 
+    <!-- MISCACTIVITY -->
+    <string name="ui_misc_current_freq">Freq attuale:</string>
+
     <!-- LOGFILE -->
     <string name="ui_la_reload_button">Ricarica Logfile</string>
     <string name="ui_la_delete_button">Cancella Logfile</string>
-    
-      <!-- INFORMATIONS -->
+
+    <!-- INFORMATIONS -->
     <string name="ui_info_layout_main_header">Informazioni</string>
     <string name="ui_header_new_theme">Pulsanti nuovo tema</string>
     <string name="ui_btt_show_states_under_perc">Visualizza stati &lt;XY%</string>
@@ -33,38 +64,63 @@
     <string name="ui_btt_refresh_data">Aggiorna dati</string>
     <string name="ui_header_show_hide">Mostra/Nascondi contenuto</string>
     <string name="ui_message_show_hide">Clicca sulle testate principali (quelle scure) per cambiare la visibilità del contenuto sottostante</string>
-	<string name="ui_header_dual_states">Statistiche/Informazioni Dual core</string>
-	<string name="ui_message_dual_states">L\'app non mostra le informazioni dei core perchè, a causa del driver kernel, non è possibile. Per avere le informazioni relative ad ogni core, piuttosto che ogni unità cpu, il dirver del kernel deve essere riscritto. Sebbere sarebbe davvero facile per me, non sono visualizzate neanche le informazioni relative alle unità CPU multiple perchè non dispongo di un device adatto: il mio amato S2 non basta.</string>
+    <string name="ui_header_dual_states">Statistiche/Informazioni Dual core</string>
+    <string name="ui_message_dual_states">L\'app non mostra le informazioni dei core perché, a causa del driver kernel, non è possibile. Per avere le informazioni relative ad ogni core, piuttosto che ogni unità cpu, il dirver del kernel deve essere riscritto. \n\nSebbene sarebbe davvero facile per me, non sono visualizzate neanche le informazioni relative alle unità CPU multiple perché non dispongo di un device adatto: il mio amato S2 non basta.</string>
     <string name="ui_header_logfile">Log File</string>
-    <string name="ui_message_logfile">Se l\'opzione "verbose app" è abilitata l\'app salverà dei brevi messaggi nel file "CpuSpy.log", collocato nella memoria esterna.</string>
-   
+    <string name="ui_message_logfile">Se l\'opzione "verbose app" è abilitata l\'app salverà dei brevi messaggi nel file \"CpuSpy.log\", collocato nella memoria esterna.</string>
 
     <!-- PREFERENCES - MAIN ACTIVITY -->
     <string name="ui_pref_header_settings">Impostazioni</string>
-    <string name="ui_pref_header_layout_option">Impostazioni Grafica</string>
-    <string name="ui_pref_header_audio_option">Impostazioni Audio</string>
+    <string name="ui_pref_header_layout_option">Grafica</string>
+    <string name="ui_pref_header_audio_option">Audio</string>
     <string name="ui_pref_header_subcategory_audio_option">Impostazioni audio interfaccia</string>
-    <string name="ui_pref_header_layout_cable">Impostazioni Cavo</string>
+    <string name="ui_pref_header_layout_cable">Cavetto</string>
     <string name="ui_pref_header_info_contact">Info &amp; Contatti</string>
     <string name="ui_pref_header_show_info">Mostra Informazioni</string>
     <string name="ui_pref_header_mail_2_dev">Mail allo sviluppatore</string>
     <string name="ui_pref_header_xda_thread">XDA forum</string>
+    <string name="ui_pref_header_view_changelog">Visualizza changelog</string>
+    <string name="ui_pref_buy_donate_title">Offrimi un caffè</string>
+    <string name="ui_pref_buy_donate_summary">La caffeina aiuta a scrivere più codice :)</string>
     <string name="ui_pref_header_development">Menu Debug</string>
     <string name="ui_pref_verbose_app_title">App Verbose</string>
     <string name="ui_pref_verbose_app_summary">Salva messaggi debug nel logfile</string>
 
     <!-- PREFERENCES - LAYOUT OPTIONS -->
     <string name="ui_pref_checkbox_all_states_top_title">Visualizza "raggruppamento" in cima</string>
-    <string name="ui_pref_checkbox_all_states_top_summary">Mostra li come prima riga nel grafico dei frequenze</string>
+    <string name="ui_pref_checkbox_all_states_top_summary">Mostrali come prima riga nel grafico dei frequenze</string>
     <string name="ui_pref_checkbox_hide_kernel_cpu_info_title">Nascondi Cpu e Kernel Infos</string>
     <string name="ui_pref_checkbox_hide_kernel_cpu_info_summary">Mostra le infos nascoste in una pagina apposita</string>
     <string name="ui_pref_seekbar_threshold_title">Soglia di raggruppamento</string>
     <string name="ui_pref_seekbar_threshold_summary">Gli stati sotto questa soglia % verranno raggruppati</string>
     <string name="ui_pref_select_themes_title">Seleziona tema</string>
     <string name="ui_pref_select_themes_summary">Seleziona il tuo tema preferito</string>
-
+    <string name="ui_pref_checkbox_hide_deep_sleep_key_title">Nascondi riga \"Deep Sleep\"</string>
+    <string name="ui_pref_checkbox_hide_deep_sleep_key_summary_on">Non verrà mostrata nel grafico</string>
+    <string name="ui_pref_checkbox_hide_deep_sleep_key_summary_off">Verrà mostrata nel grafico</string>
+    <string name="ui_pref_header_cpu_kernel">CPU e Kernel</string>
+    <string name="ui_pref_checkbox_show_current_freq_title">Mostra frequenza CPU</string>
+    <string name="ui_pref_checkbox_show_current_freq_summary_on">Frequenza corrente mostrata</string>
+    <string name="ui_pref_checkbox_show_current_freq_summary_off">Frequenza corrente nascosta</string>
+    <string name="ui_pref_alertdialog_title">Attenzione</string>
+    <string name="ui_pref_alertdialog_message_part1">Devi disabilitare l\'opzione \"</string>
+    <string name="ui_pref_alertdialog_message_part2">\" per poter visualizzare la frequenza attuale della CPU.</string>
+    <string name="pref_show_current_freq_secs_interval_title">Intervallo aggiornamento</string>
+    <string name="pref_show_current_freq_secs_interval_summary">Secondi tra ogni update</string>
+    <string name="ui_pref_alertdialog_reboot_title">Riavvia adesso?</string>
+    <string name="ui_pref_alertdialog_reboot_warning_message">Hai disabilitato le informazioni della CPU nella schermata principale. Sei sicuro di questa scelta?\n</string>
+    <string name="ui_pref_alertdialog_reboot_message">Potrebbe essere necessario riavviare l\'applicazione. Vuoi riavviare adesso?</string>
+    <string name="ui_pref_alertdialog_reboot_yes_bttn">Si</string>
+    <string name="ui_pref_alertdialog_reboot_no_bttn">No</string>
+    <string name="pref_enable_swype_gesture_title">Abilita gesti swipe</string>
+    <string name="pref_enable_swype_gesture_summary">Mostra alcune opzioni nella pagina principale con un semplice swipe orizzontale</string>
+    <string name="pref_show_millis_title">Mostra millisecondi</string>
+    <string name="pref_show_millis_summary">Mostra millisecondi nelle righe degli stati</string>
+    <string name="pref_number_after_floating_point_title">Percentuale stati</string>
+    <string name="pref_number_after_floating_point_summary">Numero di cifre dopo la virgola</string>
+    
     <string-array name="all_theme_name">
-        <item>Tema Classico</item>
+        <item>*Tema Classico</item>
         <item>Nuovo Tema</item>
     </string-array>
 
@@ -79,10 +135,6 @@
     <string name="ui_pref_checkbox_enable_batt_br_summary">Abilita reazioni alla (s)connessione del cavo</string>
     <string name="ui_pref_seekbar_batt_threshold_title">Soglia minima batteria</string>
     <string name="ui_pref_seekbar_batt_threshold_summary">Livello della batteria che fa reagire l\'app</string>
-    <string name="ThresholdFreqsToHide">ThresholdFreqsToHide</string>
-    <string name="ThresholdActivateTimerKey">ThresholdActivateTimerKey</string>
-    <string name="Pref_delete_connection_data_key">pref_delete_connection_data_key</string>
-    <string name="Pref_show_release_key">pref_show_release_key</string>
 
     <!-- NO BUTTON LAYOUT -->
     <string name="ui_header_time_in_state">Tempo negli stati</string>
@@ -103,23 +155,82 @@
     <string name="ui_header_cable_receiver">Reazione a (s)connessione cavo: </string>
     <string name="ui_row_all_states">Stati</string>
     <string name="ui_dialog_header_attention">Attenzione</string>
-    <string name="ui_dialog_message_not_compatible">Si è verificato un errore nella lettura del file degli stati.\nVuoi avviare il test di compatibilità?</string>	
-	<string name="ui_dialog_message_connected_cable">Dispositivo connesso al cavo. Staccalo per avviare il timer.</string>
-	<string name="ui_dialog_header_adsblock">Attenzione AdBlocker</string>
-	<string name="ui_dialog_message_adsblock">Gli annunci che stai bloccando servono ad invogliare lo sviluppo dell\'app. In alternativa c\'è una versione di CPU Spy Plus senza pubblicità nel Play store.</string>
-	<string name="ui_dialog_close_button">Chiudi</string>
-	
+    <string name="ui_dialog_message_not_compatible">Si è verificato un errore nella lettura del file degli stati.\nVuoi avviare il test di compatibilità?</string>
+    <string name="ui_dialog_message_connected_cable">Dispositivo connesso al cavo. Staccalo per avviare il timer.</string>
+    <string name="ui_dialog_header_adsblock">Attenzione AdBlocker</string>
+    <string name="ui_dialog_message_adsblock">Gli annunci che stai bloccando servono ad invogliare lo sviluppo dell\'app. In alternativa c\'è una versione di CPU Spy Plus senza pubblicità nel Play store.</string>
+    <string name="ui_dialog_close_button">Chiudi</string>
+    <string name="ui_dialog_cancel_button">Non mi importa</string>
+    <string name="ui_header_on">ON</string>
+    <string name="ui_header_off">OFF</string>
+    <string name="ui_toast_message_clean_settings">A causa delle ultime modifiche e per evitare risultati incoerenti/sbagliati, tutte le impostazioni sono state ripristinate ai valori predefiniti.</string>
 
     <!-- MENU ITEMS -->
     <string name="menu_compare_files">CPU Files</string>
     <string name="menu_log_file">Log File</string>
     <string name="menu_refresh">Aggiorna</string>
     <string name="menu_reset">Avvia Timer</string>
-    <string name="menu_restore">Ripristina Timer</string>
+    <string name="menu_restore">Cancella Timer</string>
     <string name="menu_perc_1st_part">Mostra/Nascondi stati</string>
     <string name="menu_perc_2nd_part">%</string>
     <string name="menu_misc_info">Info Nascoste</string>
     <string name="menu_settings">Impostazioni</string>
     <string name="menu_app_test">App Test</string>
+    <string name="menu_idle_states">Stati Idle</string>
+
+    <!-- CRASH REPORT -->
+    <string name="crash_toast_text">Ooooops ! Si è verificato un errore, per favore invia il rapporto allo sviluppatore per aiutarlo a risolvere il problema !</string>
+    <string name="crash_dialog_title">CPU Spy Plus crash</string>
+    <string name="crash_dialog_text">Un errore inaspettato ha causato la chiusura dell\'app. Per favore aiutaci a risolvere il problema inviandoci il rapporto, devi solo cliccare \'OK\'.</string>
+    <string name="crash_dialog_comment_prompt">Puoi anche aggiungere un tuo commento qui sotto:</string>
+    <string name="crash_dialog_ok_toast">Grazie !</string>
+    <string name="crash_notif_ticker_text">Errore inaspettato, per favore invia il rapporto&#8230;</string>
+    <string name="crash_notif_text">Per favore clicca qui per aiutarci a risolvere il problema</string>
+
+    <!-- NO TRANSLATION -->
+
+    <string name="ui_misc_freqs_range">Freqs range: </string>
+    <string name="ui_misc_scaling_range">Scaling range: </string>
+    <string name="ui_misc_governor">Governor: </string>
+    <string name="ui_la_header">Logfile</string>
+    <string name="ui_row_deep_state">Deep Sleep</string>
+    <string name="ui_content_desription_image"></string>
+    <string name="ui_dialog_ok_button">OK</string>
+
+    <!-- COMPARE FILES ACTIVITY -->
+    <string name="ui_text_view_affected_cups">File \"affected_cpus\":</string>
+    <string name="ui_text_view_time_in_state">File \"time_in_state\":</string>
+
+    <!-- CHANGELOG -->
+    <string name="changelog_full_title">Ultime novità</string>
+    <string name="changelog_title">Novità</string>
+    <string name="changelog_ok_button">OK</string>
+    <string name="changelog_show_full">Tutto&#8230;</string>
+
+    <!-- RATE ALERTDIALOG -->
+    <string name="ui_ma_rate_alert_title">Valuta CPU Spy Plus</string>
+    <string name="ui_ma_rate_alert_message">Ti piace CPU Spy Plus?\nperché non lasci una buona valutazione nel Play store? :)\n</string>
+    <string name="ui_ma_rate_alert_bttn_rateit">OK!</string>
+    <string name="ui_ma_rate_alert_bttn_later">Più in là</string>
+    <string name="ui_ma_rate_alert_bttn_no">No grazie</string>
+
+    <!-- CUSTOM AD -->
+    <string name="ui_ma_customAd_top_row_free">Vuoi rimuovere la pubblicità?</string>
+    <string name="ui_ma_customAd_bottom_row_free">Compra CPU Spy Plus Donate</string>
+    <string name="ui_ma_customAd_top_row_xda">Vuoi dare un piccolo supporto?</string>
+    <string name="ui_ma_customAd_bottom_row_xda">Compra CPU Spy Plus Donate</string>
+
+    <!-- HOWTO ACTIVITY -->
+    <string name="ui_howto_middle_text">Se l\'opzione é abilitata, puoi effettuare uno swipe orizzontale ovunque nella pagina principale</string>
+    <string name="ui_howto_button_got_it">OK</string>
+    <string name="ui_howto_only_once_text">*** Non vedrai più questa pagina ***</string>
+
+    <!-- CUSTOM TOAST -->
+    <string name="ui_custom_toast_sub_text">Pressione continua su un pulsante per visualizzare una veloce spiegazione</string>
+    
+    <!-- ACRA -->
+    <string name="pref_disable_acra">Vuoi segnalare gli errori?</string>
+    <string name="pref_acra_summary_on">Una tua conferma sarà comunque necessaria</string>
+    <string name="pref_acra_summary_off">Funzione di segnalazione disabilitata</string>
 
 </resources>

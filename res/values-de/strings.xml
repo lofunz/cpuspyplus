@@ -1,0 +1,244 @@
+<resources>
+
+    <!-- ACTIVITY TEST -->
+
+    <string name="ui_at_start_bttn">Testbeginn</string>
+    <string name="ui_at_progress_str">Fortschritt:</string>
+    <string name="ui_at_progress_verbose_str">Statusrückmeldungen:</string>
+
+    <dimen name="fixed_icon_dimension">50dp</dimen>
+
+    <string-array name="all_tests_name">
+        <item>Lese State_in_Time Datei: </item>
+        <item>Lese Kernel-Information: </item>
+        <item>Lese CPU-Information: </item>
+        <item>Lese CPU-Frequenzbereich: </item>
+        <item>Lese CPU-Skalierbereich: </item>
+        <item>Lese Governator: </item>
+    </string-array>
+
+    <string name="ui_at_compatibility_warning1">Wenn der erste Test fehlschlägt, wird die Anwendung nicht auf diesem Gerät funktionieren!</string>
+    <string name="ui_at_compatibility_warning2">Falls Sie ein Custom ROM oder Kernel verwenden, informieren Sie den Entwickler darüber, daß die Statusdatei nicht lesbar ist!</string>
+    <string name="ui_at_test_passed">Ok</string>
+    <string name="ui_at_test_failed">Fehler</string>
+    <string name="ui_at_error_in_content">Dateiinhalt nicht korrekt!</string>
+    <string name="ui_at_alertdialog_title">Achtung</string>
+    <string name="ui_at_alertdialog_message">Test wurde nicht vollständig abgeschlossen! Möchten Sie die Daten dem Entwickler senden, um zu versuchen, das Problem zu beheben?</string>
+    <string name="ui_at_alertdialog_send_bttn">Senden</string>
+    <string name="ui_at_alertdialog_cancel_bttn">Nein</string>
+    <string name="ui_at_email_subject">Ergebnisse des gescheiterten Tests</string>
+    <string name="ui_at_no_email_clients_error">Keine E-Mail-Anwendung gefunden!</string>
+    <string name="ui_at_email_add_comment">Kommentar hinzufügen:</string>
+
+    <!-- SYSTEMUTILS -->
+
+    <string name="str_file_not_exists">Datei existiert nicht:</string>
+    <string name="str_io_error">IO-Fehler:</string>
+
+    <!-- MISCACTIVITY -->
+
+    <string name="ui_misc_current_freq">Aktive Frequenz: </string>
+    <string name="ui_misc_freqs_range">Frequenzbereich: </string>
+    <string name="ui_misc_scaling_range">Skalierbereich: </string>
+    <string name="ui_misc_governor">Governator: </string>
+
+    <!-- LOGFILE -->
+    <string name="ui_la_header">Log-Datei</string>
+    <string name="ui_la_reload_button">Neu laden</string>
+    <string name="ui_la_delete_button">Löschen</string>
+
+    <!-- INFORMATIONS -->
+
+    <string name="ui_info_layout_main_header">Informationen</string>
+    <string name="ui_header_new_theme">Symbole Modern-Theme</string>
+    <string name="ui_btt_show_states_under_perc">Zeige &lt;XY% Status</string>
+    <string name="ui_btt_hide_states_under_perc">Verstecke &lt;XY% Status</string>
+    <string name="ui_btt_restore_timer">Zeitgeber wiederherstellen</string>
+    <string name="ui_btt_reset_timer">Zeitgeber zurücksetzen</string>
+    <string name="ui_btt_refresh_data">Daten aktualisieren</string>
+    <string name="ui_header_show_hide">Inhalt anzeigen/verstecken</string>
+    <string name="ui_message_show_hide">Drücken Sie auf die Hauptleiste (meistens schwarz), um die Statussichtberkeit zu verändern.</string>
+    <string name="ui_header_dual_states">Zweikernstatus</string>
+    <string name="ui_message_dual_states">Die Anwendung zeigt keine Zweikernstati an, da abhängig von den Kerneltreibern das nicht möglich ist. Um die Stati für jeden Kern anstatt jeder CPU anzuzeigen, müssten die Kerneltreiber umgeschrieben werden. Das alles wäre kein Problem, jedoch zeigt die Anwendung trotzdem keine Informationen verschiedener CPU-Einheiten and, da mein S2 nur eine besitzt.</string>
+    <string name="ui_header_logfile">Log-Datei</string>
+    <string name="ui_message_logfile">Ist die erweiterte Logfunktion aktiviert, schreibt die Anwendung die Ereignisse in eine "CpuSpy.log" Datei. Gespeichert wird auf der SD-Karte.</string> <!-- PREFERENCES - MAIN ACTIVITY -->
+    <string name="ui_pref_header_settings">Einstellungen</string>
+    <string name="ui_pref_header_layout_option">Oberfläche</string>
+    <string name="ui_pref_header_audio_option">Töne</string>
+    <string name="ui_pref_header_subcategory_audio_option">Anwendungstöne</string>
+    <string name="ui_pref_header_layout_cable">Kabelereignisse</string>
+    <string name="ui_pref_header_info_contact">Information &amp; Kontakt</string>
+    <string name="ui_pref_header_show_info">Programmfunktionen - Hilfe</string>
+    <string name="ui_pref_header_mail_2_dev">Nachricht an den Entwickler</string>
+    <string name="ui_pref_header_xda_thread">XDA-Forumbeitrag</string>
+    <string name="ui_pref_header_view_changelog">Versionsverlauf anzeigen</string>
+    <string name="ui_pref_buy_donate_title">Kaufen Sie mir einen Kaffee</string>
+    <string name="ui_pref_buy_donate_summary">Koffein hilft mir, mehr Code zu schreiben :)</string>
+    <string name="ui_pref_header_development">Entwicklermenü</string>
+    <string name="ui_pref_verbose_app_title">Erweiterte Logfunktion</string>
+    <string name="ui_pref_verbose_app_summary">Ereignisse in Log-Datei speichern</string>
+
+    <!-- PREFERENCES - LAYOUT OPTIONS -->
+    <string name="ui_pref_checkbox_all_states_top_title">Zeige \"Alle Stati\" oben an</string>
+    <string name="ui_pref_checkbox_all_states_top_summary">Alle Ereignisse an oberster Stelle anzeigen</string>
+    <string name="ui_pref_checkbox_hide_kernel_cpu_info_title">CPU und Kernelinformationen ausblenden</string>
+    <string name="ui_pref_checkbox_hide_kernel_cpu_info_summary">Kompaktere Darstellung der Anwendung</string>
+    <string name="ui_pref_seekbar_threshold_title">Grenzwert für Gruppenstatus</string>
+    <string name="ui_pref_seekbar_threshold_summary">Stati werden gruppiert unter dem Wert von </string>
+    <string name="ui_pref_select_themes_title">Theme auswählen</string>
+    <string name="ui_pref_select_themes_summary">Wählen Sie Ihre bevorzugte Oberfläche aus</string>
+    <string name="ui_pref_checkbox_hide_deep_sleep_key_title"> Status \"Tiefschlaf\"  nicht anzeigen</string>
+    <string name="ui_pref_checkbox_hide_deep_sleep_key_summary_on">Wird in der Übersicht nicht angezeigt</string>
+    <string name="ui_pref_checkbox_hide_deep_sleep_key_summary_off">Wird in der Übersicht angezeigt</string>
+    <string name="ui_pref_alertdialog_title">Achtung</string>
+    <string name="ui_pref_alertdialog_message_part1">Sie müssen die Funktion \"</string>
+    <string name="ui_pref_alertdialog_message_part2">\" ausschalten, um die aktive CPU-Frequenz anzuzeigen!</string>
+    <string name="ui_pref_header_cpu_kernel">CPU und Kernel</string>
+    <string name="ui_pref_checkbox_show_current_freq_title">Aktive CPU-Frequenz</string>
+    <string name="ui_pref_checkbox_show_current_freq_summary_on">Gerade aktive Frequenz anzeigen</string>
+    <string name="ui_pref_checkbox_show_current_freq_summary_off">Gerade aktive Frequenz nicht anzeigen</string>
+    <string name="pref_show_current_freq_secs_interval_title">Aktualisierungsintervall</string>
+    <string name="pref_show_current_freq_secs_interval_summary">Sekunden zwischen den Aktualisierungen</string>
+    <string name="ui_pref_alertdialog_reboot_title">Neu starten?</string>
+    <string name="ui_pref_alertdialog_reboot_warning_message">Sie möchten die CPU-Informationen wirklich ausblenden? Sind Sie sich sicher?\n</string>
+    <string name="ui_pref_alertdialog_reboot_message">Es wird empfohlen die Anwendung neu zu starten. Jetzt neu starten?</string>
+    <string name="ui_pref_alertdialog_reboot_yes_bttn">Ja</string>
+    <string name="ui_pref_alertdialog_reboot_no_bttn">Nein</string>
+    <string name="pref_enable_swype_gesture_title">Wischgesten aktivieren</string>
+    <string name="pref_enable_swype_gesture_summary">Zeigt einige Einstellungen mittels Gesten über Leisten und Schaltflächen an</string>
+    <string name="pref_show_millis_title">Erweiterte Zeitanzeige</string>
+    <string name="pref_show_millis_summary">Statuszeiten werden in Millisekunden dargestellt</string>
+    <string name="pref_number_after_floating_point_title">Erweiterte Prozentanzeige</string>
+    <string name="pref_number_after_floating_point_summary">Zusätzliche Nachkommastellen darstellen</string>
+
+    <string-array name="all_theme_name">
+        <item>*Klassik</item>
+        <item>Modern</item>
+    </string-array>
+
+    <integer-array name="theme_choice">
+        <item>10</item>
+        <item>11</item>
+    </integer-array>
+
+    <!-- PREFERENCES - AUDIO OPTIONS -->
+
+    <string name="ui_pref_checkbox_enable_ui_sounds_title">Anwendungstöne</string>
+    <string name="ui_pref_checkbox_enable_ui_sounds_summary">Hauptanwendungstöne sind aktiv</string>
+    <string name="ui_pref_checkbox_enable_ui_pref_sounds_title">Zusätzliche Anwendungstöne</string>
+    <string name="ui_pref_checkbox_enable_ui_pref_sounds_summary">Erweitere Töne sind aktiv</string>
+
+    <!-- PREFERENCES - CABLE OPTIONS -->
+
+    <string name="ui_pref_checkbox_enable_batt_br_title">Ladeereignisse</string>
+    <string name="ui_pref_checkbox_enable_batt_br_summary">Kabelereignisse werden angezeigt</string>
+    <string name="ui_pref_seekbar_batt_threshold_title">Min. Batteriewert für Zurücksetzen</string>
+    <string name="ui_pref_seekbar_batt_threshold_summary">Grenzwert für Kabelentfernen</string>
+
+    <!-- NO BUTTON LAYOUT -->
+
+    <string name="ui_header_time_in_state">Statuszeit</string>
+    <string name="ui_subheader_time">Zeit</string>
+    <string name="ui_subheader_percetage">%</string>
+    <string name="ui_subheader_mhz">MHz</string>
+    <string name="ui_states_warning_str">Keine Statusdatei gefunden! Ist Ihr Gerät kompatibel?\n\nFalls Sie ein Custom ROM oder Kernel verwenden, informieren Sie den Entwickler darüber, daß die Statusdatei nicht lesbar ist.</string>
+    <string name="ui_header_tot_states_time">Gesamtstatistik</string>
+    <string name="ui_subheader_time_from_boot">Laufzeit</string>
+    <string name="ui_subheader_total_state_time">Gesamte Statuszeit</string>
+    <string name="ui_header_battery_stats">Statistiken seit Zurücksetzen/Kabelentfernung</string>
+    <string name="ui_subheader_initial_level">Startlevel</string>
+    <string name="ui_subheader_juice_lost">Batterieverlust</string>
+    <string name="ui_header_unused_states">Unbenutzte CPU-Stati</string>
+    <string name="ui_header_cpu_info">CPU-Information</string>
+    <string name="ui_header_kernel_info">Kernel-Information</string>
+    <string name="ui_header_less_1st_part">Stati unterhalb des Grenzwertes von</string>
+    <string name="ui_header_cable_receiver">Kabelereignisse beobachten</string>
+    <string name="ui_row_all_states">Alle Stati</string>
+    <string name="ui_row_deep_state">Tiefschlaf</string>
+    <string name="ui_content_desription_image" />
+    <string name="ui_dialog_header_attention">Achtung</string>
+    <string name="ui_dialog_message_not_compatible">Fehler beim Lesen der CPU-Statusdatei.\nMöchten Sie einen Kompatibilitätstest starten?</string>
+    <string name="ui_dialog_ok_button">OK</string>
+    <string name="ui_dialog_cancel_button">Nicht beachten</string>
+    <string name="ui_dialog_message_connected_cable">Kable am Gerät angeschlossen. Ausstecken um den Zeitgeber zurückzusetzen.</string>
+    <string name="ui_dialog_header_adsblock">Achtung AdBlocker</string>
+    <string name="ui_dialog_message_adsblock">Das Blockieren der Werbung schadet der Weiterentwicklung dieser Anwendung. Es gibt eine werbefreie CPU Spy Plus Version im Play Store.</string>
+    <string name="ui_dialog_close_button">Schließen</string>
+    <string name="ui_header_on">EIN</string>
+    <string name="ui_header_off">AUS</string>
+    <string name="ui_toast_message_clean_settings">Aufgrund der letzten Änderungen und um inkonsistente bzw. falsche Ergebnisse zu vermeiden, wurden alle Einstellungen auf die Standardwerte zurückgesetzt!</string> <!-- MENU ITEMS -->
+    <string name="menu_compare_files">CPU-Dateien</string>
+    <string name="menu_log_file">Log-Datei</string>
+    <string name="menu_refresh">Aktualisieren</string>
+    <string name="menu_reset">Zeitgeber zurücksetzen</string>
+    <string name="menu_restore">Zeitgeber wiederherstellen</string>
+    <string name="menu_perc_1st_part">Anzeigen/Ausblenden</string>
+    <string name="menu_perc_2nd_part">% benutzte Stati</string>
+    <string name="menu_misc_info">Verschiedenes</string>
+    <string name="menu_settings">Einstellungen</string>
+    <string name="menu_app_test">Anwendungstest</string>
+
+    <!-- CRASH REPORT -->
+
+    <string name="crash_toast_text">Ooooops! Es ist ein Fehler aufgetreten. Bitte senden Sie diesen Bericht, um den Fehler rasch beheben zu können!</string>
+    <string name="crash_dialog_title">CPU Spy Plus ist abgestürzt!</string>
+    <string name="crash_dialog_text">Ein unerwarteter Fehler ist aufgetreten und die Anwendung wurde angehalten. Bitte helfen Sie uns dieses Problem zu beheben, indem Sie einen Bericht senden. Sie müssen dafür nur auf \"Ok\" drücken.</string>
+    <string name="crash_dialog_comment_prompt">Sie können auch weitere Informationen dazu jetzt unten angeben:</string>
+    <string name="crash_dialog_ok_toast">Danke!</string>
+    <string name="crash_notif_ticker_text">Unerwarteter Fehler! Bitte senden Sie einen Bericht…</string>
+    <string name="crash_notif_text">Bitte hier drücken</string>
+
+    <!-- COMPARE FILES ACTIVITY -->
+
+    <string name="ui_text_view_affected_cups">\"affected_cpus\"-Dateien:</string>
+    <string name="ui_text_view_time_in_state">\"time_in_state\"-Dateien:</string>
+    <string name="changelog_full_title">Versionsverlauf</string>
+    <string name="changelog_title">Was ist neu?</string>
+    <string name="changelog_ok_button">Ok</string>
+    <string name="changelog_show_full">Mehr…</string>
+
+    <!-- RATE ALERTDIALOG -->
+    <string name="ui_ma_rate_alert_title">CPU Spy Plus bewerten</string>
+    <string name="ui_ma_rate_alert_message">Finden Sie CPU Spy Plus gut?\nWenn ja, dann bewerten Sie die Anwendung mit vielen Sternen!\n</string>
+    <string name="ui_ma_rate_alert_bttn_rateit">Jetzt</string>
+    <string name="ui_ma_rate_alert_bttn_later">Später</string>
+    <string name="ui_ma_rate_alert_bttn_no">Nein Danke</string>
+
+    <!-- CUSTOM AD -->
+
+    <string name="ui_ma_customAd_top_row_free">Werbung ausblenden?</string>
+    <string name="ui_ma_customAd_bottom_row_free">CPU Spy Plus kaufen</string>
+    <string name="ui_ma_customAd_top_row_xda">Entwicklung unterstützen?</string>
+    <string name="ui_ma_customAd_bottom_row_xda">CPU Spy Plus kaufen</string>
+
+    <!-- HOWTO ACTIVITY -->
+
+    <string name="ui_howto_middle_text">Mit dieser Option können Sie in der Hauptansicht überall horizontal wischen.</string>
+    <string name="ui_howto_button_got_it">OK</string>
+    <string name="ui_howto_only_once_text">*** Nicht mehr anzeigen ***</string>
+
+    <!-- ACTIVITY IDLE STATES -->
+
+    <string name="ui_header_help_info">Hilfe</string>
+    <string name="ui_tv_name">Name:</string>
+    <string name="ui_tv_description">Beschreibung:</string>
+    <string name="ui_tv_time">Zeit:</string>
+    <string name="ui_tv_power">Leistung:</string>
+    <string name="ui_tv_power_row">Leistung (W):</string>
+    <string name="ui_tv_usage">Verbrauch:</string>
+    <string name="ui_tv_description_meaning">Kurzbeschreibung über den Leerlaufzeitstatus</string>
+    <string name="ui_tv_time_meaning">Gesamtzeit im Leerlaufstatus</string>
+    <string name="ui_tv_power_meaning">Verbrauch im Leerlaufstatus (Watt)</string>
+    <string name="ui_tv_usage_meaning">Wie oft war dieser Status aktiv (Anzahl)</string>
+    <string name="menu_idle_states">Leerlaufstatus</string>
+    <string name="ui_tv_no_idle_states">Kein Leerlaufstatus vorgefunden!</string>
+
+    <!-- CUSTOM TOAST -->
+    <string name="ui_custom_toast_sub_text">Langes Drücken für eine Kurzbeschreibung der einzelnen Funktionen</string>
+
+    <!-- ACRA -->
+    <string name="pref_disable_acra">Fehlerbericht senden?</string>
+    <string name="pref_acra_summary_on">Ihre Bestätigung wird immer noch benötigt</string>
+    <string name="pref_acra_summary_off">Fehlerberichterstattung innerhalb der Anwendung ausgeschaltet</string>
+
+</resources>
